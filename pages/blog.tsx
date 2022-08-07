@@ -2,12 +2,12 @@ import type { NextPage } from "next";
 
 import Container from "../components/Containers";
 
-const Home: NextPage = () => {
+const Blog: NextPage = () => {
   return (
     <Container>
-      <span>HOME</span>
+      <span>Blog</span>
     </Container>
   );
 };
 
-export default Home;
+export default Blog;
