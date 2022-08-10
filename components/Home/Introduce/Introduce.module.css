@@ -1,0 +1,21 @@
+.my_introduce {
+  min-height: 30vh;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.title {
+  margin-top: 0;
+  color: #a9adc1;
+}
+
+.description {
+  font-weight: 400;
+  color: #a9adc1;
+}
+
+.recent_post {
+  height: 30px;
+}
