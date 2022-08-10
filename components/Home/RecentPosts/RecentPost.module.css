@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.recent_posts_title {
+  margin-top: 0.7rem;
+  font-size: 2rem;
+}
+
+.recent_post_wrapper {
+  display: flex;
+}
