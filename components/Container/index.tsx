@@ -15,10 +15,11 @@ const Container = (props: ContainerProps) => {
       <Head>
         <title>takhyun blog</title>
       </Head>
-      <header>
+      <header className={styles.header}>
         <Nav />
+        <div className={styles.header_profile} />
       </header>
-      <main>{props.children}</main>
+      <main className={styles.main}>{props.children}</main>
     </div>
   );
 };
