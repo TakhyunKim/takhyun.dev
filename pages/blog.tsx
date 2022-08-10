@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-import Container from "../components/Containers";
+import Container from "../components/Container";
 
 const Blog: NextPage = () => {
   return (
