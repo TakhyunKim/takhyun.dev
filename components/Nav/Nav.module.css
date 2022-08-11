@@ -1,0 +1,25 @@
+.wrapper {
+  width: "100%";
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.nav_text {
+  margin-right: 1.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  color: #a9adc1;
+}
+
+.nav_text_clicked {
+  margin-right: 1.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  border-bottom: 3px solid white;
+  border-radius: 30;
+  color: white;
+}

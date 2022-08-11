@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: 2rem;
+}
+
+.header_profile {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: grey;
+}
+
+.main {
+  width: 70%;
+  margin: 1rem;
+}
