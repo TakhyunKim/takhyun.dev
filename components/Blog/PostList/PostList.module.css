@@ -1,0 +1,9 @@
+.post_list_title {
+  margin-top: 3rem;
+}
+
+.post_list_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

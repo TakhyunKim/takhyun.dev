@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 30vh;
+  min-height: 25vh;
   margin-bottom: 1.5rem;
   padding: 1rem;
   background-color: gray;
@@ -26,7 +26,6 @@
 .recent_post_sub_title {
   font-size: 1rem;
   font-weight: 400;
-  color: #a9adc1;
 }
 
 .recent_post_thumbnail {
