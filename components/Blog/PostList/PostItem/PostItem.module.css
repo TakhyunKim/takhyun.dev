@@ -1,0 +1,30 @@
+.post_item_wrapper {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.post_thumbnail {
+  height: 23rem;
+  margin-bottom: 1rem;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.sub_title {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.date {
+  font-size: 1rem;
+  color: #a9adc1;
+}
