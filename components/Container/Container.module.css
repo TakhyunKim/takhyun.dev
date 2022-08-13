@@ -13,6 +13,10 @@
   margin: 2rem;
 }
 
+.nav_profile_wrapper {
+  display: flex;
+}
+
 .header_profile {
   width: 2.5rem;
   height: 2.5rem;
