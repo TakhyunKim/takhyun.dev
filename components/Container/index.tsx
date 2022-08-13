@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Head from "next/head";
 
 import Nav from "../Nav";
+import BlogTitle from "../BlogTitle";
 
 import styles from "./Container.module.css";
 
@@ -16,8 +17,11 @@ const Container = (props: ContainerProps) => {
         <title>takhyun blog</title>
       </Head>
       <header className={styles.header}>
-        <Nav />
-        <div className={styles.header_profile} />
+        <BlogTitle />
+        <div className={styles.nav_profile_wrapper}>
+          <Nav />
+          <div className={styles.header_profile} />
+        </div>
       </header>
       <main className={styles.main}>{props.children}</main>
     </div>
