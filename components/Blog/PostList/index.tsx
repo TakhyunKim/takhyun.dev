@@ -13,7 +13,6 @@ interface PostListProps {
 const PostList: NextPage<PostListProps> = ({ allPostsData }) => {
   return (
     <div>
-      <h2 className={styles.post_list_title}>현재 Post List</h2>
       <div className={styles.post_list_wrapper}>
         {allPostsData.map((postData) => (
           <PostItem key={postData.id} postData={postData} />

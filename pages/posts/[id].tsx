@@ -9,6 +9,8 @@ import type { ParsedUrlQuery } from "querystring";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import type { PostDataWithHtml } from "../../lib/posts";
 
+import Container from "../../components/Container";
+
 interface PostProps {
   postData: PostDataWithHtml;
 }
@@ -19,13 +21,13 @@ interface PostStatic extends ParsedUrlQuery {
 
 const Post: NextPage<PostProps> = ({ postData }) => {
   return (
-    <div>
+    <Container>
       <div>{postData.date}</div>
       <div>{postData.id}</div>
       <div>{postData.title}</div>
       <div>{postData.subtitle}</div>
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-    </div>
+    </Container>
   );
 };
 
