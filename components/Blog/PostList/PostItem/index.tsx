@@ -7,12 +7,14 @@ import styles from "./PostItem.module.css";
 
 import type { PostData } from "../../../../lib/posts";
 
+import Tag from "../../../Tag";
+
 interface PostItemProps {
   postData: PostData;
 }
 
 const PostItem: NextPage<PostItemProps> = ({
-  postData: { id, title, date, subtitle, thumbnailUrl },
+  postData: { id, title, date, tagList, subtitle, thumbnailUrl },
 }) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const router = useRouter();
@@ -30,8 +32,14 @@ const PostItem: NextPage<PostItemProps> = ({
       >
         <div className={styles.title}>{title}</div>
         <div className={styles.sub_title}>{subtitle}</div>
+        <div className={styles.tag_list_wrapper}>
+          {tagList.map((tag) => (
+            <Tag key={tag} tag={tag} isHovered={isHovered} />
+          ))}
+        </div>
         <div className={styles.date}>{date}</div>
       </div>
+
       <div className={styles.post_thumbnail}>
         <Image priority src={thumbnailUrl} alt="thumbnail" layout="fill" />
       </div>

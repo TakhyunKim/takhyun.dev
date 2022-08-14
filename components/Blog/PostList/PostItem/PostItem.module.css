@@ -17,6 +17,10 @@
   overflow: hidden;
 }
 
+.tag_list_wrapper {
+  display: flex;
+}
+
 .title {
   font-size: 1.5rem;
   font-weight: bold;
