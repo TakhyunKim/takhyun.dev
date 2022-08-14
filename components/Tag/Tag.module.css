@@ -1,0 +1,27 @@
+.tag_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.7rem;
+  color: white;
+  background-color: #375995;
+  border-radius: 10px;
+}
+
+.tag_wrapper_hovered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.7rem;
+  color: white;
+  background-color: #375995;
+  border-radius: 10px;
+}
