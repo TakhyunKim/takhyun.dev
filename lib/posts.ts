@@ -8,6 +8,7 @@ export interface PostData {
   id: string;
   date: string;
   title: string;
+  tagList: string[];
   subtitle: string;
   thumbnailUrl: string;
 }
@@ -27,9 +28,11 @@ export const getSortedPostsData = () => {
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
     const matterResult = matter(fileContents);
+    const tagList = matterResult.data?.tag.split(",");
 
     return {
       id,
+      tagList,
       ...matterResult.data,
     } as PostData;
   });
@@ -65,9 +68,11 @@ export const getPostData = async (id: string) => {
     .use(html)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
+  const tagList = matterResult.data?.tag.split(",");
 
   return {
     id,
+    tagList,
     contentHtml,
     ...(matterResult.data as { title: string; date: string }),
   };
