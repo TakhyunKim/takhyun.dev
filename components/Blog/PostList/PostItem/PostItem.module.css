@@ -3,13 +3,17 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 1.5rem;
+  cursor: pointer;
 }
 
 .post_thumbnail {
+  position: relative;
+  width: 100%;
   height: 23rem;
   margin-bottom: 1rem;
   background-color: gray;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .title {

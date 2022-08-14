@@ -1,16 +1,33 @@
 import type { NextPage } from "next";
+import Image from "next/image";
+import { useRouter } from "next/router";
 
 import styles from "./PostItem.module.css";
 
-const PostItem: NextPage = () => {
+import type { PostData } from "../../../../lib/posts";
+import React from "react";
+
+interface PostItemProps {
+  postData: PostData;
+}
+
+const PostItem: NextPage<PostItemProps> = ({
+  postData: { id, title, date, subtitle, thumbnailUrl },
+}) => {
+  const router = useRouter();
+
+  const handlePostClick = () => {
+    router.push(`/posts/${id}`);
+  };
+
   return (
-    <div className={styles.post_item_wrapper}>
-      <div className={styles.post_thumbnail} />
-      <div className={styles.title}>Next js 로 블로그 만들기</div>
-      <div className={styles.sub_title}>
-        Next js 를 어떻게 사용할 수 있을까?
+    <div onClick={handlePostClick} className={styles.post_item_wrapper}>
+      <div className={styles.post_thumbnail}>
+        <Image priority src={thumbnailUrl} alt="thumbnail" layout="fill" />
       </div>
-      <div className={styles.date}>2022년 08년 12일</div>
+      <div className={styles.title}>{title}</div>
+      <div className={styles.sub_title}>{subtitle}</div>
+      <div className={styles.date}>{date}</div>
     </div>
   );
 };
