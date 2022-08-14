@@ -21,14 +21,16 @@ const PostItem: NextPage<PostItemProps> = ({
   };
 
   return (
-    <div onClick={handlePostClick} className={styles.post_item_wrapper}>
+    <article onClick={handlePostClick} className={styles.post_item_wrapper}>
+      <div>
+        <div className={styles.title}>{title}</div>
+        <div className={styles.sub_title}>{subtitle}</div>
+        <div className={styles.date}>{date}</div>
+      </div>
       <div className={styles.post_thumbnail}>
         <Image priority src={thumbnailUrl} alt="thumbnail" layout="fill" />
       </div>
-      <div className={styles.title}>{title}</div>
-      <div className={styles.sub_title}>{subtitle}</div>
-      <div className={styles.date}>{date}</div>
-    </div>
+    </article>
   );
 };
 
