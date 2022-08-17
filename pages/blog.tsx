@@ -5,7 +5,6 @@ import type { PostData } from "../lib/posts";
 
 import Container from "../components/Container";
 import PostList from "../components/Blog/PostList";
-import RecommendPost from "../components/Blog/RecommendPost";
 
 interface BlogProps {
   allPostsData: PostData[];
@@ -14,7 +13,6 @@ interface BlogProps {
 const Blog: NextPage<BlogProps> = ({ allPostsData }) => {
   return (
     <Container>
-      <RecommendPost />
       <PostList allPostsData={allPostsData} />
     </Container>
   );

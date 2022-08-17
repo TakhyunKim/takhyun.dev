@@ -4,14 +4,11 @@ import styles from "./Tag.module.css";
 
 interface TagProps {
   tag: string;
-  isHovered: boolean;
 }
 
-const Tag: NextPage<TagProps> = ({ tag, isHovered }) => {
+const Tag: NextPage<TagProps> = ({ tag }) => {
   return (
-    <div
-      className={isHovered ? styles.tag_wrapper_hovered : styles.tag_wrapper}
-    >
+    <div className={styles.tag_wrapper}>
       <span>{tag}</span>
     </div>
   );
