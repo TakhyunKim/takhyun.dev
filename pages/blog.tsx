@@ -1,14 +1,31 @@
-import type { NextPage } from "next";
+import type { NextPage, GetStaticProps } from "next";
+
+import { getSortedPostsData } from "../lib/posts";
+import type { PostData } from "../lib/posts";
 
 import Container from "../components/Container";
-import RecommendPost from "../components/Blog/RecommendPost";
+import PostList from "../components/Blog/PostList";
 
-const Blog: NextPage = () => {
+interface BlogProps {
+  allPostsData: PostData[];
+}
+
+const Blog: NextPage<BlogProps> = ({ allPostsData }) => {
   return (
     <Container>
-      <RecommendPost />
+      <PostList allPostsData={allPostsData} />
     </Container>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allPostsData = getSortedPostsData();
+
+  return {
+    props: {
+      allPostsData,
+    },
+  };
 };
 
 export default Blog;
