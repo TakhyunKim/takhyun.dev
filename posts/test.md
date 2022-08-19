@@ -1,6 +1,6 @@
 ---
 title: "뭔가 최선을 다해서 결과를 내보고 싶지만 어렵다"
-subtitle: "Next js 를 처음 사용해보고 있지만 docs 가 훌륭해서 따라하기 쉽다"
+subtitle: "Next js docs 가 훌륭해서 따라하기 쉽다"
 date: "2020-10-12"
 thumbnailUrl: "/images/desktop.jpg"
 tag: "react,nextjs,javascript"
