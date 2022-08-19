@@ -16,6 +16,7 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import type { PostDataWithHtml } from "../../lib/posts";
 
 import Container from "../../components/Container";
+import TopScrollButton from "../../components/Blog/TopScrollButton";
 
 import styles from "../styles/post.module.css";
 
@@ -46,6 +47,7 @@ const Post: NextPage<PostProps> = ({
       <div className={styles.html_wrapper}>
         <MDXRemote {...mdxSource} />
       </div>
+      <TopScrollButton />
     </Container>
   );
 };
