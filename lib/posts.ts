@@ -3,6 +3,8 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import { serialize } from "next-mdx-remote/serialize";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 export interface PostData {
   id: string;
@@ -15,6 +17,10 @@ export interface PostData {
 
 export interface PostDataWithHtml extends PostData {
   contentHtml: string;
+  mdxSource: MDXRemoteSerializeResult<
+    Record<string, unknown>,
+    Record<string, string>
+  >;
 }
 
 const postsDirectory = path.join(process.cwd(), "posts");
@@ -63,7 +69,7 @@ export const getPostData = async (id: string) => {
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   const matterResult = matter(fileContents);
-
+  const mdxSource = await serialize(matterResult.content);
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content);
@@ -73,6 +79,7 @@ export const getPostData = async (id: string) => {
   return {
     id,
     tagList,
+    mdxSource,
     contentHtml,
     ...(matterResult.data as { title: string; date: string }),
   };
