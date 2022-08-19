@@ -1,7 +1,7 @@
 .post_item_wrapper {
   position: relative;
   width: 32%;
-  height: 24rem;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   margin-bottom: 3rem;
@@ -14,10 +14,10 @@
   transition: 0.5s ease;
 }
 
-.post_item_wrapper_hover {
+.post_item_wrapper:hover {
   position: relative;
   width: 32%;
-  height: 24rem;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
@@ -48,10 +48,15 @@
   border: none;
 }
 
-.tag_list_wrapper {
+.tag_list_date_wrapper {
   display: flex;
+  flex-direction: column;
   position: absolute;
   bottom: 0.5rem;
+}
+
+.tag_list_wrapper {
+  display: flex;
 }
 
 .title {
@@ -64,4 +69,11 @@
   font-size: 0.9rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
+}
+
+.date {
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #a9adc1;
 }
