@@ -1,0 +1,12 @@
+.button {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: #f2cb42;
+  border: none;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background-color: #947e2e;
+}

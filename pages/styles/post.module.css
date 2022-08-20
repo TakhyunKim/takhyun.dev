@@ -1,0 +1,81 @@
+.title {
+  margin-top: 0;
+}
+
+.date {
+  margin-bottom: 3rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #a9adc1;
+}
+
+.thumbnail_wrapper {
+  position: relative;
+  width: 100%;
+  height: 35rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.html_wrapper {
+  line-height: 1.7rem;
+  color: #d1d5db;
+}
+
+.html_wrapper h1 {
+  margin: 3rem 0;
+
+  color: white;
+}
+
+.html_wrapper h2 {
+  margin-top: 3rem;
+  color: white;
+}
+
+.html_wrapper h3 {
+  margin-top: 2rem;
+  color: white;
+}
+
+.html_wrapper a {
+  color: #0ea5e9;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: #0ea5e9;
+  text-decoration-thickness: 1px;
+}
+
+.html_wrapper strong {
+  color: white;
+}
+
+.html_wrapper blockquote {
+  font-weight: 500;
+  font-style: italic;
+  color: #f3f4f6;
+  border-left: 3px solid #f3f4f6;
+  margin: 2rem 0;
+  padding-left: 1em;
+}
+
+.html_wrapper li {
+  margin: 1rem 0;
+}
+
+.html_wrapper code {
+  color: white;
+  font-size: 1rem;
+  font-family: inherit;
+  background: none;
+}
+
+.html_wrapper pre {
+  color: white;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-family: inherit;
+  border: 1px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+}

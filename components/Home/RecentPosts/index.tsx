@@ -1,18 +1,20 @@
 import type { NextPage } from "next";
 
-import RecentPost from "./RecentPost";
+import type { PostData } from "../../../lib/posts";
+
+import PostList from "../../PostList";
 
 import styles from "./RecentPost.module.css";
 
-const RecentPosts: NextPage = () => {
+interface RecentPostsProps {
+  postList: PostData[];
+}
+
+const RecentPosts: NextPage<RecentPostsProps> = ({ postList }) => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.recent_posts_title}>최근 포스팅</h2>
-      <div>
-        <RecentPost />
-        <RecentPost />
-        <RecentPost />
-      </div>
+      <PostList postList={postList} />
     </div>
   );
 };
