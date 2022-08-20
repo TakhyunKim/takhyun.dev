@@ -30,3 +30,15 @@
 .recent_post {
   height: 30px;
 }
+
+/** 모바일 css */
+@media (max-width: 768px) {
+  .intro_profile {
+    position: relative;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    box-shadow: 2px 2px 6px #3e3e3f;
+    overflow: hidden;
+  }
+}
