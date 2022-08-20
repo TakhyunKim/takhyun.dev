@@ -4,9 +4,9 @@ import { useRouter } from "next/router";
 
 import styles from "./PostItem.module.css";
 
-import type { PostData } from "../../../../lib/posts";
+import type { PostData } from "../../../lib/posts";
 
-import Tag from "../../../Tag";
+import Tag from "../../Tag";
 
 interface PostItemProps {
   postData: PostData;

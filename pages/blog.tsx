@@ -4,7 +4,7 @@ import { getSortedPostsData } from "../lib/posts";
 import type { PostData } from "../lib/posts";
 
 import Container from "../components/Container";
-import PostList from "../components/Blog/PostList";
+import PostList from "../components/PostList";
 
 interface BlogProps {
   allPostsData: PostData[];
@@ -13,7 +13,7 @@ interface BlogProps {
 const Blog: NextPage<BlogProps> = ({ allPostsData }) => {
   return (
     <Container>
-      <PostList allPostsData={allPostsData} />
+      <PostList postList={allPostsData} />
     </Container>
   );
 };
