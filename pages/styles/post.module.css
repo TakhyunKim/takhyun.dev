@@ -18,11 +18,22 @@
 }
 
 .html_wrapper {
-  line-height: 1.5rem;
+  line-height: 1.7rem;
   color: #d1d5db;
 }
 
+.html_wrapper h1 {
+  margin: 3rem 0;
+
+  color: white;
+}
+
 .html_wrapper h2 {
+  margin-top: 3rem;
+  color: white;
+}
+
+.html_wrapper h3 {
   margin-top: 2rem;
   color: white;
 }
