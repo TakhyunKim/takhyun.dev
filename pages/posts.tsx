@@ -6,11 +6,11 @@ import type { PostData } from "../lib/posts";
 import Container from "../components/Container";
 import PostList from "../components/PostList";
 
-interface BlogProps {
+interface PostsProps {
   allPostsData: PostData[];
 }
 
-const Blog: NextPage<BlogProps> = ({ allPostsData }) => {
+const Posts: NextPage<PostsProps> = ({ allPostsData }) => {
   return (
     <Container>
       <PostList postList={allPostsData} />
@@ -28,4 +28,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Blog;
+export default Posts;

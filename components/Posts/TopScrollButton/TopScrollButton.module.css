@@ -1,4 +1,6 @@
 .button {
+  width: 2rem;
+  height: 2rem;
   position: fixed;
   bottom: 3rem;
   right: 3rem;
@@ -14,14 +16,14 @@
 /** 모바일 css */
 @media (max-width: 768px) {
   .button {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     position: fixed;
     bottom: 1rem;
     right: 1rem;
     background-color: #f2cb42;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
   }
 
   .button:hover {
