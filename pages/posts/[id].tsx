@@ -16,7 +16,7 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import type { PostDataWithHtml } from "../../lib/posts";
 
 import Container from "../../components/Container";
-import TopScrollButton from "../../components/Blog/TopScrollButton";
+import TopScrollButton from "../../components/Posts/TopScrollButton";
 
 import styles from "../styles/post.module.css";
 
