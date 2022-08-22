@@ -13,13 +13,13 @@ interface PostsProps {
 const Posts: NextPage<PostsProps> = ({ allPostsData }) => {
   return (
     <Container>
-      <PostList postList={allPostsData} />
+      <PostList postType="posts" postList={allPostsData} />
     </Container>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData();
+  const allPostsData = getSortedPostsData({ postType: "posts" });
 
   return {
     props: {
