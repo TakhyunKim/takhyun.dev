@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 import styles from "./PostItem.module.css";
 
@@ -10,19 +9,15 @@ import Tag from "../../Tag";
 
 interface PostItemProps {
   postData: PostData;
+  onClick: () => void;
 }
 
 const PostItem: NextPage<PostItemProps> = ({
-  postData: { id, title, date, tagList, subtitle, thumbnailUrl },
+  postData: { title, date, tagList, subtitle, thumbnailUrl },
+  onClick,
 }) => {
-  const router = useRouter();
-
-  const handlePostClick = () => {
-    router.push(`/posts/${id}`);
-  };
-
   return (
-    <article onClick={handlePostClick} className={styles.post_item_wrapper}>
+    <article onClick={onClick} className={styles.post_item_wrapper}>
       <div className={styles.post_content_wrapper}>
         <div className={styles.post_thumbnail}>
           <Image priority src={thumbnailUrl} alt="thumbnail" layout="fill" />

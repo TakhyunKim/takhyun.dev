@@ -53,7 +53,7 @@ const Post: NextPage<PostProps> = ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds();
+  const paths = getAllPostIds({ postType: "posts" });
 
   return {
     paths,
@@ -65,7 +65,7 @@ export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
 ) => {
   const { id } = context.params as PostStatic;
-  const postData = await getPostData(id);
+  const postData = await getPostData({ postType: "posts", id });
 
   return {
     props: {

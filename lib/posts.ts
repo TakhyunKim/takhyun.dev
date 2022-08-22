@@ -6,6 +6,8 @@ import html from "remark-html";
 import { serialize } from "next-mdx-remote/serialize";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
+import type { MarkdownPost } from "../common/types/markdownPost";
+
 export interface PostData {
   id: string;
   date: string;
@@ -23,9 +25,17 @@ export interface PostDataWithHtml extends PostData {
   >;
 }
 
-const postsDirectory = path.join(process.cwd(), "posts");
+interface PostType {
+  postType: MarkdownPost;
+}
 
-export const getSortedPostsData = () => {
+interface PostDataParams {
+  id: string;
+  postType: MarkdownPost;
+}
+
+export const getSortedPostsData = ({ postType }: PostType) => {
+  const postsDirectory = path.join(process.cwd(), postType);
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
     const id = fileName.replace(/\.md$/, "");
@@ -52,7 +62,8 @@ export const getSortedPostsData = () => {
   });
 };
 
-export const getAllPostIds = () => {
+export const getAllPostIds = ({ postType }: PostType) => {
+  const postsDirectory = path.join(process.cwd(), postType);
   const fileNames = fs.readdirSync(postsDirectory);
 
   return fileNames.map((fileName) => {
@@ -64,7 +75,8 @@ export const getAllPostIds = () => {
   });
 };
 
-export const getPostData = async (id: string) => {
+export const getPostData = async ({ postType, id }: PostDataParams) => {
+  const postsDirectory = path.join(process.cwd(), postType);
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 

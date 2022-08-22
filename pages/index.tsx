@@ -21,7 +21,7 @@ const Home: NextPage<HomeProps> = ({ recentPosts }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const recentPosts = getSortedPostsData().slice(0, 3);
+  const recentPosts = getSortedPostsData({ postType: "posts" }).slice(0, 3);
 
   return {
     props: {
