@@ -12,11 +12,16 @@
   color: #a9adc1;
 }
 
+.copyright_wrapper {
+  padding-right: 0.5rem;
+  border-right: 1px solid #a9adc1;
+}
+
 .github_wrapper {
   position: relative;
   width: 1rem;
   height: 1rem;
-  margin-right: 0.5rem;
+  margin-left: 0.5rem;
   border-radius: 50%;
   overflow: hidden;
 }
