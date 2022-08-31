@@ -6,7 +6,7 @@
   margin-bottom: 3rem;
   font-size: 1rem;
   font-weight: 400;
-  color: #a9adc1;
+  color: var(--description-text-color);
 }
 
 .thumbnail_wrapper {
@@ -19,42 +19,41 @@
 
 .html_wrapper {
   line-height: 1.7rem;
-  color: #d1d5db;
+  color: var(--post-text-color);
 }
 
 .html_wrapper h1 {
   margin: 3rem 0;
-
-  color: white;
+  color: var(--post-text-color);
 }
 
 .html_wrapper h2 {
   margin-top: 3rem;
-  color: white;
+  color: var(--post-text-color);
 }
 
 .html_wrapper h3 {
   margin-top: 2rem;
-  color: white;
+  color: var(--post-text-color);
 }
 
 .html_wrapper a {
-  color: #0ea5e9;
+  color: var(--post-link-tag-color);
   text-decoration: underline;
   text-underline-position: under;
-  text-decoration-color: #0ea5e9;
+  text-decoration-color: var(--post-link-tag-color);
   text-decoration-thickness: 1px;
 }
 
 .html_wrapper strong {
-  color: white;
+  color: var(--post-text-color);
 }
 
 .html_wrapper blockquote {
   font-weight: 500;
   font-style: italic;
-  color: #f3f4f6;
-  border-left: 3px solid #f3f4f6;
+  color: var(--post-block-quote-color);
+  border-left: 3px solid var(--post-block-quote-color);
   margin: 2rem 0;
   padding-left: 1em;
 }
@@ -64,18 +63,18 @@
 }
 
 .html_wrapper code {
-  color: white;
+  color: var(--post-text-color);
   font-size: 1rem;
   font-family: inherit;
   background: none;
 }
 
 .html_wrapper pre {
-  color: white;
+  color: var(--post-text-color);
   font-size: 1rem;
   line-height: 2rem;
   font-family: inherit;
-  border: 1px solid white;
+  border: 1px solid var(--post-text-color);
   border-radius: 10px;
   overflow: hidden;
 }

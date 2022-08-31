@@ -6,11 +6,11 @@
   flex-direction: column;
   margin-bottom: 3rem;
   padding: 1rem;
-  border: 1px solid #585b63;
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
-  box-shadow: 2px 2px 6px #3e3e3f;
+  box-shadow: 10px 20px 20px 0 var(--box-shadow-color);
   transition: 0.5s ease;
 }
 
@@ -22,11 +22,12 @@
   flex-direction: column;
   margin-bottom: 2rem;
   padding: 1rem;
-  border: 1px solid #585b63;
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
-  background-color: #303136;
+  background-color: var(--box-bg-hovered-color);
+  box-shadow: 10px 20px 20px 0 var(--box-shadow-hovered-color);
   transition: 0.5s ease;
 }
 
@@ -75,7 +76,7 @@
   margin-bottom: 0.5rem;
   font-size: 0.8rem;
   font-weight: 400;
-  color: #a9adc1;
+  color: var(--description-text-color);
 }
 
 /** 모바일 css */
@@ -88,11 +89,11 @@
     flex-direction: column;
     margin-bottom: 3rem;
     padding: 1rem;
-    border: 1px solid #585b63;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     cursor: pointer;
     overflow: hidden;
-    box-shadow: 2px 2px 6px #3e3e3f;
+    box-shadow: 10px 20px 20px 0 var(--box-shadow-color);
     transition: 0.5s ease;
   }
 
@@ -104,11 +105,11 @@
     flex-direction: column;
     margin-bottom: 2rem;
     padding: 1rem;
-    border: 1px solid #585b63;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     cursor: pointer;
     overflow: hidden;
-    background-color: #303136;
+    box-shadow: 10px 20px 20px 0 var(--box-shadow-hovered-color);
     transition: 0.5s ease;
   }
 }
