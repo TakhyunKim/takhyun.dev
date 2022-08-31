@@ -4,8 +4,8 @@
   margin-bottom: 0.5rem;
   padding: 0.3rem 0.5rem;
   font-size: 0.8rem;
-  color: white;
-  border: 1px solid #585b63;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
   border-radius: 30px;
   text-decoration: none;
   transition: 1s ease;

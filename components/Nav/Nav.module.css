@@ -11,7 +11,7 @@
   font-size: 1.5rem;
   font-weight: 300;
   letter-spacing: 0.1rem;
-  color: #a9adc1;
+  color: var(--description-text-color);
 }
 
 .nav_text_clicked {
@@ -20,7 +20,7 @@
   font-size: 1.5rem;
   font-weight: 300;
   letter-spacing: 0.1rem;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--text-color);
   border-radius: 30;
-  color: white;
+  color: var(--text-color);
 }
