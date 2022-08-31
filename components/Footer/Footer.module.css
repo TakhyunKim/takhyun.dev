@@ -9,12 +9,12 @@
   margin: 0;
   background: none;
   font-size: 0.8rem;
-  color: #a9adc1;
+  color: var(--description-text-color);
 }
 
 .copyright_wrapper {
   padding-right: 0.5rem;
-  border-right: 1px solid #a9adc1;
+  border-right: 1px solid var(--description-text-color);
 }
 
 .github_wrapper {
