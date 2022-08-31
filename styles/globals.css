@@ -1,9 +1,26 @@
-html,
+:root {
+  --bg-color: #202125;
+  --text-color: #ffffff;
+}
+
+body[data-theme="dark"] {
+  --bg-color: #202125;
+  --text-color: #ffffff;
+}
+
+body[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
 body {
+  background: var(--bg-color);
+  color: var(--text-color);
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  transition: background 0.2s ease-in, color 0.2s ease-in;
 }
 
 a {
@@ -21,23 +38,3 @@ a {
     font-size: 13px;
   }
 }
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: #202125;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  html {
-    color-scheme: light;
-  }
-  body {
-    color: black;
-    background: #ffffff;
-  }
-} */
