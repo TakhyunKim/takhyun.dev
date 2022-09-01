@@ -65,7 +65,8 @@
 .html_wrapper code {
   color: var(--post-text-color);
   font-size: 1rem;
-  font-family: inherit;
+  font-weight: bold;
+  font-family: oblique;
   background: none;
 }
 
@@ -77,4 +78,11 @@
   border: 1px solid var(--post-text-color);
   border-radius: 10px;
   overflow: hidden;
+}
+
+.html_wrapper pre code {
+  color: var(--post-text-color);
+  font-size: 1rem;
+  font-family: inherit;
+  background: none;
 }
