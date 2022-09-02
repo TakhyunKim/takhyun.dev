@@ -24,17 +24,17 @@
 
 .html_wrapper h1 {
   margin: 3rem 0;
-  color: var(--post-text-color);
+  color: var(--post-h-tag-color);
 }
 
 .html_wrapper h2 {
   margin-top: 3rem;
-  color: var(--post-text-color);
+  color: var(--post-h-tag-color);
 }
 
 .html_wrapper h3 {
   margin-top: 2rem;
-  color: var(--post-text-color);
+  color: var(--post-h-tag-color);
 }
 
 .html_wrapper a {
@@ -46,7 +46,7 @@
 }
 
 .html_wrapper strong {
-  color: var(--post-text-color);
+  color: var(--post-h-tag-color);
 }
 
 .html_wrapper blockquote {
@@ -63,7 +63,7 @@
 }
 
 .html_wrapper code {
-  color: var(--post-text-color);
+  color: var(--post-h-tag-color);
   font-size: 1rem;
   font-weight: bold;
   font-family: oblique;
@@ -71,7 +71,7 @@
 }
 
 .html_wrapper pre {
-  color: var(--post-text-color);
+  color: var(--post-h-tag-color);
   font-size: 1rem;
   line-height: 2rem;
   font-family: inherit;
