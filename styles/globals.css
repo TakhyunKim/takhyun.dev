@@ -10,6 +10,7 @@
   --post-text-highlight-color: #000000;
   --post-block-quote-color: #0c0c0c;
   --post-link-tag-color: #0ea5e9;
+  --post-h-tag-color: #000000;
 }
 
 body[data-theme="dark"] {
@@ -21,6 +22,7 @@ body[data-theme="dark"] {
   --post-text-color: #d1d5db;
   --post-text-highlight-color: #ffffff;
   --post-block-quote-color: #f3f4f6;
+  --post-h-tag-color: #ffffff;
 }
 
 body[data-theme="light"] {
@@ -31,6 +33,7 @@ body[data-theme="light"] {
   --post-text-color: #343434;
   --post-text-highlight-color: #000000;
   --post-block-quote-color: #0c0c0c;
+  --post-h-tag-color: #000000;
 }
 
 body {
