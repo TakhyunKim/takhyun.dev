@@ -5,7 +5,7 @@
 
 [takhyun Kim 기술 블로그](https://takhyun.dev/)
 
-<img width="100%" alt="blog-home-page" src="/images/blog-home.jpg" />
+<img width="100%" alt="blog-home-page" src="./public/images/blog-home.jpg" />
 
 ### 🌈 기술 스택
 
