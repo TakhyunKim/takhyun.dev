@@ -9,6 +9,7 @@ import Image from "next/image";
 import type { ParsedUrlQuery } from "querystring";
 import { MDXRemote } from "next-mdx-remote";
 import hljs from "highlight.js";
+import { NextSeo } from "next-seo";
 
 import "highlight.js/styles/vs2015.css";
 
@@ -29,7 +30,7 @@ interface PostStatic extends ParsedUrlQuery {
 }
 
 const Post: NextPage<PostProps> = ({
-  postData: { title, subtitle, date, mdxSource, thumbnailUrl },
+  postData: { title, subtitle, date, mdxSource, thumbnailUrl, description },
 }) => {
   useEffect(() => {
     hljs.highlightAll();
@@ -38,6 +39,23 @@ const Post: NextPage<PostProps> = ({
 
   return (
     <Container>
+      <NextSeo
+        title={title}
+        description={description}
+        openGraph={{
+          type: "website",
+          title,
+          description,
+          images: [
+            {
+              url: `https://takhyun.dev${thumbnailUrl}`,
+              width: 800,
+              height: 400,
+              alt: `${title} image`,
+            },
+          ],
+        }}
+      />
       <h1 className={styles.title}>{title}</h1>
       <h3>{subtitle}</h3>
       <div className={styles.date}>{date}</div>

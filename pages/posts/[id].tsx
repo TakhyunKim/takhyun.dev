@@ -49,8 +49,8 @@ const Post: NextPage<PostProps> = ({
           images: [
             {
               url: `https://takhyun.dev${thumbnailUrl}`,
-              width: 400,
-              height: 800,
+              width: 800,
+              height: 400,
               alt: `${title} image`,
             },
           ],
