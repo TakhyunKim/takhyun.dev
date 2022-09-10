@@ -14,6 +14,7 @@ export interface PostData {
   title: string;
   tagList: string[];
   subtitle: string;
+  description: string;
   thumbnailUrl: string;
 }
 

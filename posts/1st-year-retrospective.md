@@ -4,6 +4,7 @@ subtitle: "커리어 전환부터 1년까지의 기록"
 date: "2022-09-03"
 thumbnailUrl: "/images/firstYear/bird.jpg"
 tag: "2022년,회고"
+description: "전기 전공자의 프론트 개발자 1년차 회고를 작성했습니다"
 ---
 
 > 글을 작성하기에 앞서 회고는 정말 편하게 작성하고자 합니다! <br />
