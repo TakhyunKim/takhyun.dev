@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
+import { NextSeo } from "next-seo";
 
 import { getSortedPostsData } from "../lib/posts";
 import type { PostData } from "../lib/posts";
@@ -13,6 +14,24 @@ interface ProjectsProps {
 const Projects: NextPage<ProjectsProps> = ({ allProjectsData }) => {
   return (
     <Container>
+      <NextSeo
+        title="Takhyun Kim 프로젝트 목록"
+        description="개인 프로젝트를 확인할 수 있는 페이지입니다"
+        openGraph={{
+          type: "website",
+          title: "Takhyun Kim 프로젝트 목록",
+          description: "개인 프로젝트를 확인할 수 있는 페이지입니다",
+          url: "https://takhyun.dev/projects",
+          images: [
+            {
+              url: "https://takhyun.dev/images/habitTree/habitTree.gif",
+              width: 800,
+              height: 400,
+              alt: "blog posts image",
+            },
+          ],
+        }}
+      />
       <PostList postType="projects" postList={allProjectsData} />
     </Container>
   );
