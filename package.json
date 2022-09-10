@@ -13,6 +13,7 @@
     "highlight.js": "^11.6.0",
     "next": "12.2.4",
     "next-mdx-remote": "^4.1.0",
+    "next-seo": "^5.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remark": "^14.0.2",
