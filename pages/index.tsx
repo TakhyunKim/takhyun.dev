@@ -26,7 +26,7 @@ const Home: NextPage<HomeProps> = ({ recentPosts }) => {
           description: "프론트엔드 개발자 김탁현의 기술 블로그",
           images: [
             {
-              url: "/images/intro-profile.jpg",
+              url: "https://takhyun.dev/images/intro-profile.jpg",
               width: 400,
               height: 800,
               alt: "takhyun Kim profile image",
