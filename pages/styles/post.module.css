@@ -87,3 +87,13 @@
   font-family: inherit;
   background: none;
 }
+
+@media (max-width: 768px) {
+  .thumbnail_wrapper {
+    position: relative;
+    width: 100%;
+    height: 15rem;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+}
