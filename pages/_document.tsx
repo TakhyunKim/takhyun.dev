@@ -5,7 +5,7 @@ import { setInitialTheme } from "../lib/setInitialTheme";
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="ko">
         <Head />
         <body>
           <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
