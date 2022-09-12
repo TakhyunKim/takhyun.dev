@@ -1,7 +1,7 @@
 :root {
   --bg-color: #ffffff;
   --text-color: #414141;
-  --description-text-color: #a9adc1;
+  --description-text-color: #585b63;
   --border-color: #a4a4a4;
   --box-shadow-color: #5c5f7014;
   --box-shadow-hovered-color: #5c5f701a;
@@ -28,6 +28,7 @@ body[data-theme="dark"] {
 body[data-theme="light"] {
   --bg-color: #ffffff;
   --text-color: #414141;
+  --description-text-color: #585b63;
   --border-color: #a4a4a4;
   --box-bg-hovered-color: #efeeee;
   --post-text-color: #343434;
