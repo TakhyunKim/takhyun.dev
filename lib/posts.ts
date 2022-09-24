@@ -31,7 +31,7 @@ export interface PostData {
 
 export interface PostDataWithHtml extends PostData {
   contentHtml: string;
-  tableOfContents: TableOfContents[] | undefined;
+  tableOfContents: TableOfContents[];
   mdxSource: MDXRemoteSerializeResult<
     Record<string, unknown>,
     Record<string, string>
@@ -100,11 +100,11 @@ export const getHeadingInfo = (
   return { text: headingText, link };
 };
 
-export const getHeadings = (source: string): TableOfContents[] | undefined => {
+export const getHeadings = (source: string): TableOfContents[] => {
   const headings: TableOfContents[] = [];
   const isMatchOfSource = source.match(/<h[2-3]>(.*?)<\/h[2-3]>/g);
 
-  if (!isMatchOfSource) return;
+  if (!isMatchOfSource) return headings;
 
   isMatchOfSource.forEach((heading) => {
     if (heading.includes("h2")) {
