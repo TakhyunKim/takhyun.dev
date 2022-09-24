@@ -4,6 +4,8 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 import { serialize } from "next-mdx-remote/serialize";
+import rehypeSlug from "rehype-slug";
+
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import type { MarkdownPost } from "../common/types/markdownPost";
@@ -95,18 +97,18 @@ export const getHeadingInfo = (
   const headingText = heading
     .replace(`<${postHeading}>`, "")
     .replace(`</${postHeading}>`, "");
-  const link = "#" + headingText.replace(/ /g, "_").toLowerCase();
+  const link = "#" + headingText.replaceAll(" ", "-").toLowerCase();
 
   return { text: headingText, link };
 };
 
 export const getHeadings = (source: string): TableOfContents[] => {
   const headings: TableOfContents[] = [];
-  const isMatchOfSource = source.match(/<h[2-3]>(.*?)<\/h[2-3]>/g);
+  const matchOfSourceList = source.match(/<h[2-3]>(.*?)<\/h[2-3]>/g);
 
-  if (!isMatchOfSource) return headings;
+  if (!matchOfSourceList) return headings;
 
-  isMatchOfSource.forEach((heading) => {
+  matchOfSourceList.forEach((heading) => {
     if (heading.includes("h2")) {
       const tableOfContent = getHeadingInfo(heading, "h2");
 
@@ -126,8 +128,14 @@ export const getPostData = async ({ postType, id }: PostDataParams) => {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
+  const options = {
+    mdxOptions: {
+      rehypePlugins: [rehypeSlug],
+    },
+  };
+
   const matterResult = matter(fileContents);
-  const mdxSource = await serialize(matterResult.content);
+  const mdxSource = await serialize(matterResult.content, options);
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content);
