@@ -71,7 +71,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
 `;
 ```
 
-### inital Theme 지정을 위한 유틸 함수 추가 3️⃣
+### inital Theme 지정을 위한 유틸 함수 추가
 
 [prefers-color-scheme](https://developer.mozilla.org/ko/docs/Web/CSS/@media/prefers-color-scheme) 에 접근해서 `theme` 를 확인하는 방법입니다.
 
@@ -154,7 +154,7 @@ export default MyApp;
 > - 위 `<script>` 에서 사용자 테마를 확인합니다.
 > - Javascript 를 통해 css variable 를 업데이트합니다.
 
-### inital Theme 설정 ⚒
+### inital Theme 설정
 
 `initial theme` 설정을 위한 유틸 함수를 추가했습니다.<br />
 window 객체가 있을 경우, `localStorage` 에 접근해서 값을 확인하고<br />

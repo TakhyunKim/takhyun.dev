@@ -230,7 +230,7 @@ export const getSortedPostsData = () => {
 };
 ```
 
-### 각 Post 별로 데이터를 어떻게 가져올 수 있을까요 ?
+### 각 Post 별로 데이터를 어떻게 가져올 수 있을까요?
 
 > util function 의 목적
 >
