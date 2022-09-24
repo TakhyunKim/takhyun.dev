@@ -8,6 +8,11 @@ import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import type { MarkdownPost } from "../common/types/markdownPost";
 
+export interface TableOfContents {
+  text: string;
+  link: string;
+}
+
 export interface PostData {
   id: string;
   date: string;
@@ -76,6 +81,23 @@ export const getAllPostIds = ({ postType }: PostType) => {
   });
 };
 
+export const getHeadings = (source: string): TableOfContents[] | undefined => {
+  const isMatchOfSource = source.match(/<h2>(.*?)<\/h2>/g);
+
+  if (isMatchOfSource) {
+    return isMatchOfSource.map((heading) => {
+      const headingText = heading.replace("<h2>", "").replace("</h2>", "");
+
+      const link = "#" + headingText.replace(/ /g, "_").toLowerCase();
+
+      return {
+        text: headingText,
+        link,
+      };
+    });
+  }
+};
+
 export const getPostData = async ({ postType, id }: PostDataParams) => {
   const postsDirectory = path.join(process.cwd(), postType);
   const fullPath = path.join(postsDirectory, `${id}.md`);
@@ -87,6 +109,7 @@ export const getPostData = async ({ postType, id }: PostDataParams) => {
     .use(html)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
+  const tableOfContents = getHeadings(contentHtml);
   const tagList = matterResult.data?.tag.split(",");
 
   return {
