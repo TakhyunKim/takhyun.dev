@@ -8,9 +8,15 @@ import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import type { MarkdownPost } from "../common/types/markdownPost";
 
+export interface TableOfContent {
+  text: string;
+  link: string;
+}
+
 export interface TableOfContents {
   text: string;
   link: string;
+  items: TableOfContent[];
 }
 
 export interface PostData {
@@ -25,6 +31,7 @@ export interface PostData {
 
 export interface PostDataWithHtml extends PostData {
   contentHtml: string;
+  tableOfContents: TableOfContents[] | undefined;
   mdxSource: MDXRemoteSerializeResult<
     Record<string, unknown>,
     Record<string, string>
@@ -81,21 +88,37 @@ export const getAllPostIds = ({ postType }: PostType) => {
   });
 };
 
+export const getHeadingInfo = (
+  heading: string,
+  postHeading: "h2" | "h3"
+): TableOfContent => {
+  const headingText = heading
+    .replace(`<${postHeading}>`, "")
+    .replace(`</${postHeading}>`, "");
+  const link = "#" + headingText.replace(/ /g, "_").toLowerCase();
+
+  return { text: headingText, link };
+};
+
 export const getHeadings = (source: string): TableOfContents[] | undefined => {
-  const isMatchOfSource = source.match(/<h2>(.*?)<\/h2>/g);
+  const headings: TableOfContents[] = [];
+  const isMatchOfSource = source.match(/<h[2-3]>(.*?)<\/h[2-3]>/g);
 
-  if (isMatchOfSource) {
-    return isMatchOfSource.map((heading) => {
-      const headingText = heading.replace("<h2>", "").replace("</h2>", "");
+  if (!isMatchOfSource) return;
 
-      const link = "#" + headingText.replace(/ /g, "_").toLowerCase();
+  isMatchOfSource.forEach((heading) => {
+    if (heading.includes("h2")) {
+      const tableOfContent = getHeadingInfo(heading, "h2");
 
-      return {
-        text: headingText,
-        link,
-      };
-    });
-  }
+      headings.push({ ...tableOfContent, items: [] });
+    } else {
+      const tableOfContent = getHeadingInfo(heading, "h3");
+
+      headings[headings.length - 1].items.push(tableOfContent);
+    }
+  });
+
+  return headings;
 };
 
 export const getPostData = async ({ postType, id }: PostDataParams) => {
@@ -117,6 +140,7 @@ export const getPostData = async ({ postType, id }: PostDataParams) => {
     tagList,
     mdxSource,
     contentHtml,
+    tableOfContents,
     ...(matterResult.data as { title: string; date: string }),
   };
 };

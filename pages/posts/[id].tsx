@@ -30,7 +30,15 @@ interface PostStatic extends ParsedUrlQuery {
 }
 
 const Post: NextPage<PostProps> = ({
-  postData: { title, subtitle, date, mdxSource, thumbnailUrl, description },
+  postData: {
+    date,
+    title,
+    subtitle,
+    mdxSource,
+    description,
+    thumbnailUrl,
+    tableOfContents,
+  },
 }) => {
   useEffect(() => {
     hljs.highlightAll();
