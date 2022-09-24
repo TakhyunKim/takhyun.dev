@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import type { CSSProperties } from "react";
+import type { MouseEvent, CSSProperties } from "react";
 
 import type {
   TableOfContent as TableOfContentType,
@@ -23,10 +23,25 @@ const TableOfContent = ({
   style,
   tableOfContent: { text, link },
 }: TableOfContentProps) => {
+  const scrollToHeader = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+
+    const linkId = link.replaceAll(
+      /[\{\}\[\]\/?.,;:|\)*~`!^\+<>@\#$%&\\\=\(\'\"]/gi,
+      ""
+    );
+
+    const HeaderElement = document.querySelector(
+      `#${linkId}`
+    ) as HTMLHeadingElement;
+
+    HeaderElement.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <li className={styles.table_of_content} style={style} key={text}>
       <Link href={link} key={text}>
-        <a>{text}</a>
+        <a onClick={scrollToHeader}>{text}</a>
       </Link>
     </li>
   );
