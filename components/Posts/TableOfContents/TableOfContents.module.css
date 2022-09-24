@@ -1,8 +1,10 @@
 .table_of_contents_wrapper {
   position: fixed;
   width: 15%;
-  top: 30%;
-  right: 2%;
+  top: 50%;
+  right: 1%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
 }
 
 .table_of_contents_wrapper ul {
