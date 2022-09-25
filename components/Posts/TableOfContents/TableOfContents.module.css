@@ -14,3 +14,9 @@
 .table_of_content {
   padding-bottom: 0.35rem;
 }
+
+@media (max-width: 768px) {
+  .table_of_contents_wrapper {
+    display: none;
+  }
+}
