@@ -96,4 +96,8 @@
     border-radius: 10px;
     overflow: hidden;
   }
+
+  .html_wrapper img {
+    width: 90%;
+  }
 }
