@@ -4,9 +4,22 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 import { serialize } from "next-mdx-remote/serialize";
+import rehypeSlug from "rehype-slug";
+
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import type { MarkdownPost } from "../common/types/markdownPost";
+
+export interface TableOfContent {
+  text: string;
+  link: string;
+}
+
+export interface TableOfContents {
+  text: string;
+  link: string;
+  items: TableOfContent[];
+}
 
 export interface PostData {
   id: string;
@@ -20,6 +33,7 @@ export interface PostData {
 
 export interface PostDataWithHtml extends PostData {
   contentHtml: string;
+  tableOfContents: TableOfContents[];
   mdxSource: MDXRemoteSerializeResult<
     Record<string, unknown>,
     Record<string, string>
@@ -76,17 +90,57 @@ export const getAllPostIds = ({ postType }: PostType) => {
   });
 };
 
+export const getHeadingInfo = (
+  heading: string,
+  postHeading: "h2" | "h3"
+): TableOfContent => {
+  const headingText = heading
+    .replace(`<${postHeading}>`, "")
+    .replace(`</${postHeading}>`, "");
+  const link = "#" + headingText.replaceAll(" ", "-").toLowerCase();
+
+  return { text: headingText, link };
+};
+
+export const getHeadings = (source: string): TableOfContents[] => {
+  const headings: TableOfContents[] = [];
+  const matchOfSourceList = source.match(/<h[2-3]>(.*?)<\/h[2-3]>/g);
+
+  if (!matchOfSourceList) return headings;
+
+  matchOfSourceList.forEach((heading) => {
+    if (heading.includes("h2")) {
+      const tableOfContent = getHeadingInfo(heading, "h2");
+
+      headings.push({ ...tableOfContent, items: [] });
+    } else {
+      const tableOfContent = getHeadingInfo(heading, "h3");
+
+      headings[headings.length - 1].items.push(tableOfContent);
+    }
+  });
+
+  return headings;
+};
+
 export const getPostData = async ({ postType, id }: PostDataParams) => {
   const postsDirectory = path.join(process.cwd(), postType);
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
+  const options = {
+    mdxOptions: {
+      rehypePlugins: [rehypeSlug],
+    },
+  };
+
   const matterResult = matter(fileContents);
-  const mdxSource = await serialize(matterResult.content);
+  const mdxSource = await serialize(matterResult.content, options);
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
+  const tableOfContents = getHeadings(contentHtml);
   const tagList = matterResult.data?.tag.split(",");
 
   return {
@@ -94,6 +148,7 @@ export const getPostData = async ({ postType, id }: PostDataParams) => {
     tagList,
     mdxSource,
     contentHtml,
+    tableOfContents,
     ...(matterResult.data as { title: string; date: string }),
   };
 };

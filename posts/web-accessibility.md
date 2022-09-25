@@ -21,7 +21,7 @@ description: "SEO, 웹 접근성을 얕게 적용해보았습니다."
 위 포스트를 작성하는 시점에서 이미 SEO 에 대한 조치는 했기에 위 이미지와 같은 측정값이 나오게 되었습니다.<br />
 그럼 이번에 적용한 SEO 부터 다뤄보겠습니다.
 
-## 🤔 SEO 적용해보기
+## SEO 적용해보기
 
 **SEO** 는 워낙 방대하고 좋은 자료가 많기에 이번 글에서는 SEO 가 무엇인지 왜 적용해야하는지에 대한 내용을 다루지 않습니다!<br />
 여기서는 정말 얕게 적용한 경험을 적어보려합니다.<br />
@@ -102,7 +102,7 @@ const Home = () => {
 그 밖에도 post page 에도 openGraph 를 적용해본 결과 아래와 같이 썸네일, Title, 설명을 확인할 수 있게 되었습니다.
 <img width="40%" alt="open-graph-drak-light-mode" src="/images/webAccessibility/open-graph-dark-light-mode.jpg" />
 
-## 🇰🇷 html lang 속성 적용하기 (웹접근성)
+## html lang 속성 적용하기 (웹접근성)
 
 웹 접근성에 대한 측정을 할 때 짚어준 내용 중 하나인 국제화, 현지화에 대한 이슈를 해결하고자<br />
 html tag 에 lang 속성을 적용했습니다. 아래엔 web 측정 시 표기된 내용입니다.
@@ -132,7 +132,7 @@ export default class MyDocument extends Document {
 }
 ```
 
-## ⚡️ light mode text color 명암비 이슈 (웹접근성)
+## light mode text color 명암비 이슈 (웹접근성)
 
 이 외에도 웹 접근성에서 하나 이슈가 된 것은 배경색과 글자색 간 명암비였습니다.
 <img width="40%" alt="background-text-color" src="/images/webAccessibility/background-text-color.jpg" />

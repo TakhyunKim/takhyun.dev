@@ -13,7 +13,7 @@ description: "Next js 에서 다크, 라이트 테마 모드를 적용했습니�
 > - 현재 적용한 방식에 대한 내용
 > - css variable 적용
 
-## 🤔 테마의 필요성?
+## 테마의 필요성?
 
 테마 모드가 없었을 땐 기본 Light 모드를 사용하고 있는 유저에게 비정상적인 UI 를 보여주고 있었습니다ㅠㅠ..<br />
 <img width="50%" alt="prev-version-light-mode" src="/images/darkLight/prev-light-post.jpg" />
@@ -24,12 +24,12 @@ description: "Next js 에서 다크, 라이트 테마 모드를 적용했습니�
 
 이제부터 천천히 차근차근하게 다크, 라이트 테마를 적용하겠습니당 :D
 
-## 🌈 styled-components 의 ThemeProvider (삽질 시작)
+## styled-components 의 ThemeProvider (삽질 시작)
 
 가장 먼저 생각난 것은 `styled compoents` 의 `ThemeProvider` 였습니다.<br />
 익숙하게 사용하던 Tool 이기도 하고 빠르게 적용할 수 있을 것 같아서 바로 적용했습니다.
 
-### 1️⃣ babelrc 파일 추가 및 설정 추가
+### babelrc 파일 추가 및 설정 추가
 
 styled components 를 사용하기 위해 아래 설정을 추가했습니다.
 
@@ -40,7 +40,7 @@ styled components 를 사용하기 위해 아래 설정을 추가했습니다.
 }
 ```
 
-### 2️⃣ 기본 테마 설정 및 GlobalStyles 추가
+### 기본 테마 설정 및 GlobalStyles 추가
 
 dark, light 테마에 대한 기본 색상 지정 및 `GlobalStyles` 를 추가했습니다.
 
@@ -71,7 +71,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
 `;
 ```
 
-### 3️⃣ inital Theme 지정을 위한 유틸 함수 추가
+### inital Theme 지정을 위한 유틸 함수 추가
 
 [prefers-color-scheme](https://developer.mozilla.org/ko/docs/Web/CSS/@media/prefers-color-scheme) 에 접근해서 `theme` 를 확인하는 방법입니다.
 
@@ -83,7 +83,7 @@ export const getInitialTheme = () => {
 };
 ```
 
-### 4️⃣ App.tsx 에 적용!
+### App.tsx 에 적용!
 
 아래와 같이 `ThemeProvider` 와 `GlobalStyles` 를 적용했습니다.<br />
 useState 에 getInitialTheme 를 적용하지 않은 이유는 `getInitialTheme` 는<br />
@@ -124,7 +124,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 export default MyApp;
 ```
 
-### ⚡️ 섬광 현상 발생..
+### 섬광 현상 발생..
 
 <img width="100%" alt="flash gif" src="/images/darkLight/flash-display.gif" />
 
@@ -142,7 +142,7 @@ export default MyApp;
 수정하기 전에 관련 코드를 삭제하자.. 😇
 <img width="100%" alt="remove styled-components" src="/images/darkLight/remove-styled-components.jpg" />
 
-### 🧐 이번엔 어떤 방식을 사용할까?
+### 이번엔 어떤 방식을 사용할까?
 
 관련해서 여러 레퍼런스를 찾아보면서 `data-attribute` 와 `css variable` 을 사용한 방법을 선택했습니다.<br />
 쉽게 의도를 이해할 수 있었고, 섬광 현상을 없애기 위한 방법으로 많이 제시되었기에 선택하게 되었습니다.
@@ -154,7 +154,7 @@ export default MyApp;
 > - 위 `<script>` 에서 사용자 테마를 확인합니다.
 > - Javascript 를 통해 css variable 를 업데이트합니다.
 
-### ⚒ inital Theme 설정
+### inital Theme 설정
 
 `initial theme` 설정을 위한 유틸 함수를 추가했습니다.<br />
 window 객체가 있을 경우, `localStorage` 에 접근해서 값을 확인하고<br />
@@ -240,7 +240,7 @@ body[data-theme="light"] {
 시스템 테마 설정에 따라 정상 동작하는 것을 확인했으니 이젠 유저가 테마 변경할 수 있도록<br />
 스위치 버튼을 구현하고자합니다!
 
-### 🧑‍💻 테마 변경 버튼 구현!
+### 테마 변경 버튼 구현!
 
 구현에 앞서, 간단하게 어떻게 구현할지 정리해보겠습니다.<br />
 처음 버튼에 표기되어야할 부분은 `data attribute` 에 따라 테마에 맞는 값을 표기해야합니다.<br />

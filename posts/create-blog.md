@@ -26,13 +26,13 @@ next.js 를 사용해보고 싶었고, SEO, SSR, SSG 등을 문서를 보고 이
 > - project 모으기
 > - 특별한 개인 소개 페이지 구성
 
-# 🤔 어떻게 만들까?
+## 어떻게 만들까?
 
 마크다운으로 글을 작성하고, 이를 트래킹해서 화면 상에 표기하는 방식으로 진행했습니다.<br />
 위 방식은 github 으로 블로그를 구성할 때 진행해보았던 방식입니다.<br />
 아래 내용은 공식 문서 내용을 토대로 작성했기에 아래 첨부된 링크를 통해 보셔도 좋습니다!
 
-## 🔖 프로젝트 구성
+## 프로젝트 구성
 
 처음 시작은 [next.js Docs](https://nextjs.org/docs/getting-started) 를 참고하여 `create-next-app` 을 통해 구성했습니다. <br />
 저는 `typescript` 를 사용하기에 `--typescript` 를 추가했습니다.<br />
@@ -42,7 +42,7 @@ next.js 를 사용해보고 싶었고, SEO, SSR, SSG 등을 문서를 보고 이
 yarn create next-app project-name --typescript
 ```
 
-## 🔖 페이지 구성
+## 페이지 구성
 
 블로그 글 작성하는 것이 목적이므로 `Home(index)`, `Blog` 두 페이지로 구성했습니다. <br />
 이를 위해 `pages/blog.tsx` 를 추가했습니다. <br />
@@ -66,7 +66,7 @@ const Blog = () => {
 export default Blog;
 ```
 
-## 🔖 Navigation 구성
+## Navigation 구성
 
 추후 원활한 링크 관리를 위해 아래와 같이 `link list` 를 구성했습니다.
 
@@ -103,7 +103,7 @@ const Nav = () => {
 export default Nav;
 ```
 
-## 🔖 기본 레이아웃 구성
+## 기본 레이아웃 구성
 
 head 즉 title 을 추가하고, header 내에서 Nav component 를 적용했습니다. <br />
 main 태그 내에서는 props 내 chidren 을 적용합니다.<br />
@@ -143,7 +143,7 @@ const Container = (props: ContainerProps) => {
 export default Container;
 ```
 
-## 🔖 마크다운 파일 -> blog post 페이지 구성
+## 마크다운 파일으로 blog post 페이지 구성
 
 아래 내용은 [next.js 공식 문서 data-fetching](https://nextjs.org/learn/basics/data-fetching/blog-data) 을 참고했습니다.
 
@@ -181,7 +181,7 @@ tag: "react,next.js,typescript"
 ---
 ```
 
-### ✍️ 어떻게 마크다운 blog post 페이지로 전달할 수 있을까요?
+### 어떻게 마크다운 blog post 페이지로 전달할 수 있을까요?
 
 > util function 의 목적?
 >
@@ -230,7 +230,7 @@ export const getSortedPostsData = () => {
 };
 ```
 
-### ✍️ 각 Post 별로 데이터를 어떻게 가져올 수 있을까요 ?
+### 각 Post 별로 데이터를 어떻게 가져올 수 있을까요?
 
 > util function 의 목적
 >
@@ -275,7 +275,7 @@ export const getPostData = async (id: string) => {
 
 위에 util function 를 통해 post data 를 각 포스팅의 `getStaticProps` 로 전달하고자 합니다.
 
-### ✍️ 그럼 위 데이터를 어떻게 post component 에 어떻게 적용할 수 있을까요?
+### 그럼 위 데이터를 어떻게 post component 에 어떻게 적용할 수 있을까요?
 
 Post 를 만들어보겠습니다. `pages/posts/[id].tsx` 로 만들어보았습니다. <br />
 `getStaticProps` 내에서 위에서 추가한 `getPostData` 를 통해 데이터를 가져왔습니다. <br />
@@ -357,7 +357,7 @@ export const getStaticProps: GetStaticProps = async (
 export default Post;
 ```
 
-## 🎉 이번 블로그 만들기를 진행하면서 느낀점!
+## 이번 블로그 만들기를 진행하면서 느낀점!
 
 이번 블로그 만들기는 next.js docs 기반으로 만들었습니다.<br />
 `getStaticProps`, `getStaticPaths`, `dynamic routes` 를 어떻게 활용하는지<br />
@@ -384,20 +384,20 @@ export default Post;
 주변 사람들에게 보여주면서 `어떤 레이아웃이 좀 더 보기 편한지?` `Title 이 부각되는지?` 에 대한<br />
 질문을 했었고, 이를 통해 지금과 같은 레이아웃을 구성하게 되었습니다.
 
-### 1️⃣ 첫 번째 레이아웃
+### 첫 번째 레이아웃
 
 썸네일이 차지하는 비율이 너무 크고,<br />
 이미지들이 부각될 경우 시각적으로 보기 어려울 것 같아서 변경하고자 했습니다.
 <img width="100%" alt="first-layout" src="/images/createBlog/first-layout.jpg" />
 
-### 2️⃣ 두 번째 레이아웃
+### 두 번째 레이아웃
 
 이건 포스팅이 많을 경우, 경계선이 존재하지 않아 보는 유저에게 <br />
 눈의 피로도를 높일 수 있을 것 같다는 생각을 했습니다.<br />
 이와 같은 이유로 다시 변경하고자 했습니다.
 <img width="100%" alt="second-layout" src="/images/createBlog/second-layout.jpg" />
 
-### 3️⃣ 세 번째 레이아웃
+### 세 번째 레이아웃
 
 현재의 레이아웃이며, tag, title, thumbnail 을 효과적으로 보여줄 수 있다고 생각합니다.<br />
 이와 더불어 명확한 경계선을 통해 구분된 레이아웃을 제공하여 두 번째 레이아웃의 단점을 해결해줄 수 있다고 생각합니다.
