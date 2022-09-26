@@ -5,6 +5,7 @@
   right: 1%;
   transform: translateY(-50%);
   font-size: 0.8rem;
+  border-left: 2px solid var(--border-color);
 }
 
 .table_of_contents_wrapper ul {
