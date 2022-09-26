@@ -5,6 +5,7 @@
   right: 1%;
   transform: translateY(-50%);
   font-size: 0.8rem;
+  color: var(--post-text-color);
   border-left: 2px solid var(--border-color);
 }
 
@@ -14,6 +15,10 @@
 
 .table_of_content {
   padding-bottom: 0.35rem;
+}
+
+.table_of_content:hover {
+  color: var(--text-color);
 }
 
 @media (max-width: 768px) {
