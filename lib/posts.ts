@@ -77,6 +77,44 @@ export const getSortedPostsData = ({ postType }: PostType) => {
   });
 };
 
+export const getPostingData = ({ postType }: PostType) => {
+  const postingDirectory = path.join(process.cwd(), postType);
+  const postingFileNames = fs.readdirSync(postingDirectory);
+
+  const allPostsData = postingFileNames.map((fileName) => {
+    const id = fileName.replace(/\.md$/, "");
+
+    const fullPath = path.join(postingDirectory, fileName);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+
+    const matterResult = matter(fileContents);
+    const tagList = matterResult.data?.tag.split(",");
+
+    return {
+      id,
+      tagList,
+      ...matterResult.data,
+    } as PostData;
+  });
+
+  return allPostsData;
+};
+
+export const getSortedPostsAndProjectsData = () => {
+  const allPostsData = getPostingData({ postType: "posts" });
+  const allProjectsData = getPostingData({ postType: "projects" });
+
+  const allPostsAndProjectsData = [...allPostsData, ...allProjectsData];
+
+  return allPostsAndProjectsData.sort((a, b) => {
+    if (a.date < b.date) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+};
+
 export const getAllPostIds = ({ postType }: PostType) => {
   const postsDirectory = path.join(process.cwd(), postType);
   const fileNames = fs.readdirSync(postsDirectory);
