@@ -1,7 +1,7 @@
 import type { NextPage, GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 
-import { getSortedPostsData } from "../lib/posts";
+import { getSortedPostsAndProjectsData } from "../lib/posts";
 import type { PostData } from "../lib/posts";
 
 import Container from "../components/Container";
@@ -40,7 +40,7 @@ const Home: NextPage<HomeProps> = ({ recentPosts }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const recentPosts = getSortedPostsData({ postType: "posts" }).slice(0, 3);
+  const recentPosts = getSortedPostsAndProjectsData().slice(0, 3);
 
   return {
     props: {
