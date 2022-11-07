@@ -32,7 +32,7 @@ const Projects: NextPage<ProjectsProps> = ({ allProjectsData }) => {
           ],
         }}
       />
-      <PostList postType="projects" postList={allProjectsData} />
+      <PostList postList={allProjectsData} />
     </Container>
   );
 };

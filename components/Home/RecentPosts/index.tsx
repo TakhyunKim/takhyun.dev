@@ -14,7 +14,7 @@ const RecentPosts: NextPage<RecentPostsProps> = ({ postList }) => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.recent_posts_title}>최근 포스팅</h2>
-      <PostList postType="posts" postList={postList} />
+      <PostList postList={postList} />
     </div>
   );
 };
