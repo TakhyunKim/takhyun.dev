@@ -32,7 +32,7 @@ const Posts: NextPage<PostsProps> = ({ allPostsData }) => {
           ],
         }}
       />
-      <PostList postType="posts" postList={allPostsData} />
+      <PostList postList={allPostsData} />
     </Container>
   );
 };

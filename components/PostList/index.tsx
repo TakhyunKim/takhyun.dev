@@ -10,10 +10,9 @@ import styles from "./PostList.module.css";
 
 interface PostListProps {
   postList: PostData[];
-  postType: MarkdownPost;
 }
 
-const PostList: NextPage<PostListProps> = ({ postType, postList }) => {
+const PostList: NextPage<PostListProps> = ({ postList }) => {
   const router = useRouter();
 
   return (
@@ -21,7 +20,7 @@ const PostList: NextPage<PostListProps> = ({ postType, postList }) => {
       <div className={styles.post_list_wrapper}>
         {postList.map((postData) => {
           const redirectToPost = () => {
-            router.push(`/${postType}/${postData.id}`);
+            router.push(`/${postData.postingType}/${postData.id}`);
           };
           return (
             <PostItem

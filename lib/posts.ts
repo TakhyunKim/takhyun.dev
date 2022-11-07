@@ -29,6 +29,7 @@ export interface PostData {
   subtitle: string;
   description: string;
   thumbnailUrl: string;
+  postingType: MarkdownPost;
 }
 
 export interface PostDataWithHtml extends PostData {
