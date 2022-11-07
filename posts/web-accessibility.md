@@ -5,6 +5,7 @@ date: "2022-09-13"
 thumbnailUrl: "/images/webAccessibility/valhalla.jpg"
 tag: "SEO,웹접근성,web dev"
 description: "SEO, 웹 접근성을 얕게 적용해보았습니다."
+postingType: "posts"
 ---
 
 저는 무언가를 만들고 성능 테스트하는 것을 굉장히 좋아합니다.<br />
