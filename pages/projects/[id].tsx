@@ -20,6 +20,7 @@ import Container from "../../components/Container";
 import TopScrollButton from "../../components/Posts/TopScrollButton";
 
 import styles from "../styles/post.module.css";
+import TableOfContents from "../../components/Posts/TableOfContents";
 
 interface PostProps {
   postData: PostDataWithHtml;
@@ -30,7 +31,15 @@ interface PostStatic extends ParsedUrlQuery {
 }
 
 const Post: NextPage<PostProps> = ({
-  postData: { title, subtitle, date, mdxSource, thumbnailUrl, description },
+  postData: {
+    title,
+    subtitle,
+    date,
+    mdxSource,
+    thumbnailUrl,
+    description,
+    tableOfContents,
+  },
 }) => {
   useEffect(() => {
     hljs.highlightAll();
@@ -66,6 +75,7 @@ const Post: NextPage<PostProps> = ({
         <MDXRemote {...mdxSource} />
       </div>
       <TopScrollButton />
+      <TableOfContents tableOfContents={tableOfContents} />
     </Container>
   );
 };
