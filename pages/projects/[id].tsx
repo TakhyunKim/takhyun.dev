@@ -16,7 +16,6 @@ import "highlight.js/styles/vs2015.css";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import type { PostDataWithHtml } from "../../lib/posts";
 
-import Container from "../../components/Container";
 import TopScrollButton from "../../components/Posts/TopScrollButton";
 
 import styles from "../styles/post.module.css";
@@ -47,7 +46,7 @@ const Post: NextPage<PostProps> = ({
   }, []);
 
   return (
-    <Container>
+    <>
       <NextSeo
         title={title}
         description={description}
@@ -76,7 +75,7 @@ const Post: NextPage<PostProps> = ({
       </div>
       <TopScrollButton />
       <TableOfContents tableOfContents={tableOfContents} />
-    </Container>
+    </>
   );
 };
 
