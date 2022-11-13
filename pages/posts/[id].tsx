@@ -69,7 +69,12 @@ const Post: NextPage<PostProps> = ({
       <h3>{subtitle}</h3>
       <div className={styles.date}>{date}</div>
       <div className={styles.thumbnail_wrapper}>
-        <Image alt="thumbnail" src={thumbnailUrl} layout="fill" />
+        <Image
+          loading="lazy"
+          alt="thumbnail"
+          src={thumbnailUrl}
+          layout="fill"
+        />
       </div>
       <div className={styles.html_wrapper}>
         <MDXRemote {...mdxSource} />

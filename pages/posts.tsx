@@ -4,7 +4,6 @@ import { NextSeo } from "next-seo";
 import { getSortedPostsData } from "../lib/posts";
 import type { PostData } from "../lib/posts";
 
-import Container from "../components/Container";
 import PostList from "../components/PostList";
 
 interface PostsProps {
@@ -13,7 +12,7 @@ interface PostsProps {
 
 const Posts: NextPage<PostsProps> = ({ allPostsData }) => {
   return (
-    <Container>
+    <>
       <NextSeo
         title="Takhyun Kim 포스팅 목록"
         description="기술, 개인 일상 관련 포스팅을 작성했습니다"
@@ -33,7 +32,7 @@ const Posts: NextPage<PostsProps> = ({ allPostsData }) => {
         }}
       />
       <PostList postList={allPostsData} />
-    </Container>
+    </>
   );
 };
 
