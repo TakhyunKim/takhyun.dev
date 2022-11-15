@@ -4,7 +4,6 @@ import { NextSeo } from "next-seo";
 import { getSortedPostsAndProjectsData } from "../lib/posts";
 import type { PostData } from "../lib/posts";
 
-import Container from "../components/Container";
 import Introduce from "../components/Home/Introduce";
 import RecentPosts from "../components/Home/RecentPosts";
 
@@ -14,7 +13,7 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ recentPosts }) => {
   return (
-    <Container>
+    <>
       <Introduce />
       <NextSeo
         title="Takhyun Kim & Frontend Engineer"
@@ -35,7 +34,7 @@ const Home: NextPage<HomeProps> = ({ recentPosts }) => {
         }}
       />
       <RecentPosts postList={recentPosts} />
-    </Container>
+    </>
   );
 };
 
