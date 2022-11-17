@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.not_found_header {
+  margin: 0.5rem 0;
+  color: var(--description-text-color);
+}
+
+.not_found_status_code {
+  color: var(--description-text-color);
+  margin: 0;
+  font-size: 5rem;
+}
+
+.not_found_sub_comment {
+  margin: 0.5rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 3rem;
+}
