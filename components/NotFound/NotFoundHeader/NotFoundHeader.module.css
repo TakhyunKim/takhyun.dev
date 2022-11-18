@@ -21,3 +21,8 @@
   font-weight: bold;
   line-height: 3rem;
 }
+
+.not_found_comment {
+  font-weight: 300;
+  line-height: 2rem;
+}
