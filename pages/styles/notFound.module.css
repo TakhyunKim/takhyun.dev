@@ -1,0 +1,16 @@
+.header_wrapper {
+  display: flex;
+
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.intro_profile {
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  margin-right: 10rem;
+  border-radius: 50%;
+  box-shadow: 2px 2px 6px #3e3e3f;
+  overflow: hidden;
+}
