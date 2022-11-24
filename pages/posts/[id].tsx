@@ -47,7 +47,7 @@ const Post: NextPage<PostProps> = ({
   }, []);
 
   return (
-    <Container>
+    <>
       <NextSeo
         title={title}
         description={description}
@@ -81,7 +81,7 @@ const Post: NextPage<PostProps> = ({
       </div>
       <TopScrollButton />
       <TableOfContents tableOfContents={tableOfContents} />
-    </Container>
+    </>
   );
 };
 
