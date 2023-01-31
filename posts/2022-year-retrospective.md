@@ -60,3 +60,16 @@ postingType: "posts"
 <img width="50%" alt="extension design pattern" src="/images/2022Year/extension-design-pattern.jpg" />
 <img width="50%" alt="extension setting" src="/images/2022Year/extension-setting.jpg" />
 _(번역 크롬 익스텐션은 아주아주 잘 사용하고 있다.)_
+
+## 1일 1커밋
+
+시간이 날 때마다 사이드 프로젝트를 하고 공부하는 것을 어디에 기록하고 싶었고,<br />
+나는 이를 `1일 1커밋`으로 풀어보자 했다.<br />
+
+커밋을 남기는 시간은 `밤 11시 ~ 새벽 1시` 사이에 조금씩 조금씩 작업하고,<br />
+커밋을 남기며 잔디 남기는 재미를 느끼고 있다.<br />
+이는 앞으로도 할 수 있을 때까지 해볼 생각이다.<br />
+_(나름 공부를 하는 원동력도 되고, 잔디를 보면 흐뭇함도 느낄 수 있다. 😁)_
+<img width="80%" alt="commit everyday" src="/images/2022Year/commit.jpg" />
+
+## 나의 첫 자취
