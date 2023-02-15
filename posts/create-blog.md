@@ -2,7 +2,7 @@
 title: "Next js로 개인 블로그 만들기"
 subtitle: "왜 만들었고, 어떻게 만들었을까?"
 date: "2022-08-20"
-thumbnailUrl: "/images/createBlog/desktop.jpg"
+thumbnailUrl: "/images/createBlog/thumbnail.jpg"
 tag: "react,next.js,typescript"
 description: "next js 로 개인 블로그 만들기 (with Typescript)"
 postingType: "posts"

@@ -2,7 +2,7 @@
 title: "SEO, 웹 접근성 얕게 적용해보기"
 subtitle: "SEO, 웹 접근성 적용"
 date: "2022-09-13"
-thumbnailUrl: "/images/webAccessibility/valhalla.jpg"
+thumbnailUrl: "/images/webAccessibility/thumbnail.jpg"
 tag: "SEO,웹접근성,web dev"
 description: "SEO, 웹 접근성을 얕게 적용해보았습니다."
 postingType: "posts"
