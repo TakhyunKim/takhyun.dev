@@ -16,7 +16,6 @@ import "highlight.js/styles/vs2015.css";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import type { PostDataWithHtml } from "../../lib/posts";
 
-import Container from "../../components/Container";
 import TopScrollButton from "../../components/Posts/TopScrollButton";
 import TableOfContents from "../../components/Posts/TableOfContents";
 
@@ -69,12 +68,7 @@ const Post: NextPage<PostProps> = ({
       <h3>{subtitle}</h3>
       <div className={styles.date}>{date}</div>
       <div className={styles.thumbnail_wrapper}>
-        <Image
-          loading="lazy"
-          alt="thumbnail"
-          src={thumbnailUrl}
-          layout="fill"
-        />
+        <Image alt="thumbnail" src={thumbnailUrl} layout="fill" />
       </div>
       <div className={styles.html_wrapper}>
         <MDXRemote {...mdxSource} />
