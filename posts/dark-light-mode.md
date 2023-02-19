@@ -27,7 +27,7 @@ postingType: "posts"
 
 ## styled-components 의 ThemeProvider (삽질 시작)
 
-가장 먼저 생각난 것은 `styled compoents` 의 `ThemeProvider` 였습니다.<br />
+가장 먼저 생각난 것은 `styled components` 의 `ThemeProvider` 였습니다.<br />
 익숙하게 사용하던 Tool 이기도 하고 빠르게 적용할 수 있을 것 같아서 바로 적용했습니다.
 
 ### babelrc 파일 추가 및 설정 추가
