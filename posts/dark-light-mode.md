@@ -27,7 +27,7 @@ postingType: "posts"
 
 ## styled-components 의 ThemeProvider (삽질 시작)
 
-가장 먼저 생각난 것은 `styled compoents` 의 `ThemeProvider` 였습니다.<br />
+가장 먼저 생각난 것은 `styled components` 의 `ThemeProvider` 였습니다.<br />
 익숙하게 사용하던 Tool 이기도 하고 빠르게 적용할 수 있을 것 같아서 바로 적용했습니다.
 
 ### babelrc 파일 추가 및 설정 추가
@@ -140,8 +140,6 @@ export default MyApp;
 > 테마 변경을 하는 과정이 있기에 위와 같은 섬광 현상이 발생합니다.
 
 섬광 현상을 그대로 배포할수 없으니 수정해보겠습니다!<br />
-수정하기 전에 관련 코드를 삭제하자.. 😇
-<img width="100%" alt="remove styled-components" src="/images/darkLight/remove-styled-components.jpg" />
 
 ### 이번엔 어떤 방식을 사용할까?
 
@@ -236,8 +234,6 @@ body[data-theme="light"] {
 
 위 과정까지 할 경우 **⚡️ 섬광 현상도 사라지고 시스템 테마 설정에 따라 블로그 테마도 잘 적용되는 것을 확인했습니다** :)
 
-<img width="100%" alt="flash gif" src="/images/darkLight/apply-theme.gif" />
-
 시스템 테마 설정에 따라 정상 동작하는 것을 확인했으니 이젠 유저가 테마 변경할 수 있도록<br />
 스위치 버튼을 구현하고자합니다!
 
@@ -321,8 +317,6 @@ export default ThemeButton;
 ```
 
 위와 같은 과정을 통해 현재 구현된 블로그가 되었습니다! 🤗
-
-<img width="100%" alt="complete blog gif" src="/images/darkLight/complete-blog.gif" />
 
 테마 적용은 생각보다 어려웠습니다 ㅠㅠ.. <br />
 간단하게 ThemeProvider 로 지정하면 될 것 같다는 생각에서 실패했었고,<br />

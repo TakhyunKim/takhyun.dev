@@ -54,7 +54,7 @@ _(번역 크롬 익스텐션은 아주아주 잘 사용하고 있다.)_
 커밋을 남기며 잔디 남기는 재미를 느끼고 있다.<br />
 이는 앞으로도 할 수 있을 때까지 해볼 생각이다.<br />
 _(나름 공부를 하는 원동력도 되고, 잔디를 보면 흐뭇함도 느낄 수 있다. 😁)_
-<img width="80%" alt="commit everyday" src="/images/2022Year/commit.jpg" />
+<img width="50%" alt="commit everyday" src="/images/2022Year/commit.jpg" />
 
 ### 공부하는 방법
 

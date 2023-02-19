@@ -2,7 +2,7 @@
 title: "SEO, 웹 접근성 얕게 적용해보기"
 subtitle: "SEO, 웹 접근성 적용"
 date: "2022-09-13"
-thumbnailUrl: "/images/webAccessibility/valhalla.jpg"
+thumbnailUrl: "/images/webAccessibility/thumbnail.jpg"
 tag: "SEO,웹접근성,web dev"
 description: "SEO, 웹 접근성을 얕게 적용해보았습니다."
 postingType: "posts"
@@ -49,7 +49,7 @@ const Posts = () => {
 ```
 
 이렇게 적용하게 되면 실제 html 에서는 아래 이미지처럼 확인하실 수 있습니다.
-<img width="40%" alt="meta-title-descirption" src="/images/webAccessibility/meta-title-description.jpg" />
+<img width="40%" alt="meta-title-description" src="/images/webAccessibility/meta-title-description.jpg" />
 
 사실 저는 여기까지만 하면 끝이라고 생각했는데, 제가 사용한 [라이브러리를 보면서 `openGraph` 설정](https://github.com/garmeeh/next-seo#add-seo-to-page)을 추가하게 되었습니다.<br />
 _(이번에도 개념 설명은 생략하겠습니다)_<br />
@@ -101,7 +101,7 @@ const Home = () => {
 <img width="40%" alt="after-open-graph" src="/images/webAccessibility/after-open-graph.jpg" />
 
 그 밖에도 post page 에도 openGraph 를 적용해본 결과 아래와 같이 썸네일, Title, 설명을 확인할 수 있게 되었습니다.
-<img width="40%" alt="open-graph-drak-light-mode" src="/images/webAccessibility/open-graph-dark-light-mode.jpg" />
+<img width="40%" alt="open-graph-dark-light-mode" src="/images/webAccessibility/open-graph-dark-light-mode.jpg" />
 
 ## html lang 속성 적용하기 (웹접근성)
 

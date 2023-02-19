@@ -2,7 +2,7 @@
 title: "자막 크롬 익스텐션 개발하기"
 subtitle: "영어, 한글 자막을 함께!"
 date: "2022-11-05"
-thumbnailUrl: "/images/subtitle/run-extension.gif"
+thumbnailUrl: "/images/subtitle/thumbnail.jpg"
 tag: "Chrome-extension,typescript,manifest-v3"
 description: "영어, 한글 자막을 함께 보는 나만의 크롬 익스텐션 개발"
 postingType: "projects"
@@ -153,7 +153,7 @@ translationElement.addEventListener("click", async () => {
 우선 목표한 시간 내 기능 구현을 해야하므로 `startApplyClosedCaption` function 내에 선언 후 사용하는 방향으로 진행했습니다.<br />
 
 **위에서 겪은 에러를 해결해서 번역하기 전 자막을 띄우는데 성공했습니다!🎉**<br />
-<img width="50%" alt="same subtitle" src="/images/subtitle/same-subtitle.gif" />
+<img width="50%" alt="same subtitle" src="/images/subtitle/same-subtitle.jpg" />
 
 ### CORS 에러
 
@@ -191,7 +191,6 @@ chrome.runtime.onMessage.addListener((message, _, response) => {
 ```
 
 위와 같은 이슈들을 해결하고 두 언어의 자막을 함께 볼 수 있었습니다. 🤗
-<img width="50%" alt="prototype version" src="/images/subtitle/prototype-version.gif" />
 
 _(이 때 당시의 [브랜치 URL](https://github.com/TakhyunKim/Closed-caption-korean/tree/feature/translate-text) 도 남겨두겠습니당 :D)_
 

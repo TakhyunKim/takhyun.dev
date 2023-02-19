@@ -2,7 +2,7 @@
 title: "전기 전공자의 프론트 개발자 1년차 회고 - 1편"
 subtitle: "커리어 전환부터 1년까지의 기록"
 date: "2022-09-03"
-thumbnailUrl: "/images/firstYear/bird.jpg"
+thumbnailUrl: "/images/firstYear/thumbnail.jpg"
 tag: "2022년,회고"
 description: "전기 전공자의 프론트 개발자 1년차 회고를 작성했습니다"
 postingType: "posts"
@@ -109,9 +109,6 @@ postingType: "posts"
 이번 회고에서 가장 `핵심`이라고 생각하다. 현재 가장 많이 고민하고 있는 것이기 때문이다.
 
 이전 직장에선 다양한 부서에서 일을 했다. 메인 업무인 생산부터 포장 입출하, QC, 기술 개발 등 다양한 업무를 했었다.<br />
-아래 사진은 예전 직장에서 일할때 동료가 찍어준 사진이다. (싱글벙글 웃고 있당 뭐가 그렇게 신난거지..?)
-
-<img width="50%" alt="노동자" src="/images/firstYear/worker.jpg" />
 
 다양한 경험을 할 수 있었던 이 시기에 한 가지 배운 것이 있다.<br />
 **어떤 일이든 처음 1 ~ 2년은 그 분야를 단순히 공부하는 것만이 아닌 어떻게 공부해야하는지를 고민하고 찾아가는 시기**라는 점이다.
