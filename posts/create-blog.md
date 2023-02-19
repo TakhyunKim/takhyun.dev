@@ -389,20 +389,20 @@ export default Post;
 
 썸네일이 차지하는 비율이 너무 크고,<br />
 이미지들이 부각될 경우 시각적으로 보기 어려울 것 같아서 변경하고자 했습니다.
-<img width="100%" alt="first-layout" src="/images/createBlog/first-layout.jpg" />
+<img width="50%" alt="first-layout" src="/images/createBlog/first-layout.jpg" />
 
 ### 두 번째 레이아웃
 
 이건 포스팅이 많을 경우, 경계선이 존재하지 않아 보는 유저에게 <br />
 눈의 피로도를 높일 수 있을 것 같다는 생각을 했습니다.<br />
 이와 같은 이유로 다시 변경하고자 했습니다.
-<img width="100%" alt="second-layout" src="/images/createBlog/second-layout.jpg" />
+<img width="50%" alt="second-layout" src="/images/createBlog/second-layout.jpg" />
 
 ### 세 번째 레이아웃
 
 현재의 레이아웃이며, tag, title, thumbnail 을 효과적으로 보여줄 수 있다고 생각합니다.<br />
 이와 더불어 명확한 경계선을 통해 구분된 레이아웃을 제공하여 두 번째 레이아웃의 단점을 해결해줄 수 있다고 생각합니다.
-<img width="100%" alt="last-layout" src="/images/createBlog/last-layout.jpg" />
+<img width="50%" alt="last-layout" src="/images/createBlog/last-layout.jpg" />
 
 > header 를 상단에 계속 고정하는 것이 좋을까? 스크롤해서 올라가긴 귀찮은데?<br />
 
@@ -414,7 +414,6 @@ header 에 존재하는 navigation 기능을 활용하고 싶은 경우 <br />
 **현재 적용한 방식처럼 우측 하단에 up scroll 버튼을 추가했습니다.**
 
 스크롤을 유저가 직접 올려서 사용하지 않아도 괜찮고, 포스팅 내용을 가리지 않기에 좋은 방식이라는 생각이 듭니다. :D
-<img width="100%" alt="last-layout" src="/images/createBlog/upScroll.gif" />
 
 위 기능이 없었을 때는 navigation 기능을 활용하기 위해 매번 스크롤을 해야했고,<br />
 이게 귀찮아서 이전 페이지로 이동 후 해당 기능을 활용하곤 했습니다.
