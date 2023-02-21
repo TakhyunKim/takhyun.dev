@@ -51,7 +51,7 @@ postingType: "posts"
 스스로 알아가는 과정을 통해 나는 `그림 그리는 것을 좋아하고`, `시각적으로 변화되는 것을 좋아해` 라는 것을 알았고 <br />
 `복무 만료일 아침에 친구가 보내준 짤이 프론트엔드`를 시작하는 계기가 되었다.
 
-<img width="30%" alt="나의 훈련소 시절" src="/images/firstYear/manipulated-photo.jpg" />
+<img width="30%" loading="lazy" alt="나의 훈련소 시절" src="/images/firstYear/manipulated-photo.jpg" />
 
 당시에는 개발자도구에서 간단하게 변경할 수 있는 내용이라는 것도 모르고,<br />
 `"헤드라인 뉴스에 내가 왜 나와?? 뭐야 어떻게 한거야?"` 하면서 당황했다.<br />
@@ -70,7 +70,7 @@ postingType: "posts"
 > - 스스로 문제를 정의하고 해결해나가는 과정이 매우 좋았다.
 > - 멘토링 시스템 덕분에 현업 개발자분들의 생각과 의견을 얻을 수 있다는 점이 성장에 있어 매우 큰 도움이 되었다.
 
-<img width="70%" alt="공부 노트" src="/images/firstYear/note.jpg" />
+<img width="70%" loading="lazy" alt="공부 노트" src="/images/firstYear/note.jpg" />
 
 (개발 공부를 처음 시작했을 때 하나씩 이해하고 정리했던 흔적이다. 열심히 한 나를 토닥토닥..)
 
@@ -81,7 +81,7 @@ postingType: "posts"
 이력서 통과조차 힘든 현실이 너무나도 힘들었지만 개인 프로젝트도 리팩토링하면서 부족한 부분을 개선하고<br />
 수많은 도전 끝에 지금의 회사에 입사하게 되었다.
 
-<img width="50%" alt="취업 결과" src="/images/firstYear/result.jpg" />
+<img width="50%" loading="lazy" alt="취업 결과" src="/images/firstYear/result.jpg" />
 (원티드로 지원했던 현황.. 총 3곳에서 합격 소식을 받을 수 있었다.)
 
 심리적, 체력적으로 힘든 시간이지만, 반대로 언어에 대한 기초를 많이 쌓을 수 있던 시간이였고<br />
@@ -138,7 +138,7 @@ postingType: "posts"
 난 항상 이런 순간이 오면 동료에게 물어보는 편이고 이렇게 물어보면서 어떻게 공부를 해야할지 길을 잡을 수 있었다.<br />
 (이전 직장에 있을 때도 특히 기술팀에서 일했을 때.. 어떻게 공부해야하는지 물어봤었다. 덕분에 살아남을 수 있었다.)<br />
 
-<img width="50%" alt="study" src="/images/firstYear/study.jpg" />
+<img width="50%" loading="lazy" alt="study" src="/images/firstYear/study.jpg" />
 
 새로운 기술 스택을 공부한다고 가정했을 때, 이전에는 거의 외우다시피 공부하는 것이 아닌 <br />
 `기술 스택이 풀고자하는 문제가 무엇인지?`, `그게 왜 문제라고 생각하는지?`<br />
