@@ -17,7 +17,7 @@ postingType: "posts"
 ## 테마의 필요성?
 
 테마 모드가 없었을 땐 기본 Light 모드를 사용하고 있는 유저에게 비정상적인 UI 를 보여주고 있었습니다ㅠㅠ..<br />
-<img width="50%" alt="prev-version-light-mode" src="/images/darkLight/prev-light-post.jpg" />
+<img width="50%" loading="lazy" alt="prev-version-light-mode" src="/images/darkLight/prev-light-post.jpg" />
 
 보이시는 것과 같이 다크 모드 기준 text color 가 white 톤이라 내용을 구분할 수가 없습니다..<br />
 위 버그를 제보 받은 후, 후다닥 퇴근해서 **body tag** 에 **dark mode color**, **background color** 를 적용하여,<br />
@@ -127,7 +127,7 @@ export default MyApp;
 
 ### 섬광 현상 발생..
 
-<img width="100%" alt="flash gif" src="/images/darkLight/flash-display.gif" />
+<img width="100%" loading="lazy" alt="flash gif" src="/images/darkLight/flash-display.gif" />
 
 페이지 새로고침을 할 경우, 위와 같이 섬광 현상이 발생하고 있습니다.<br />
 관련해서 참고한 블로그입니다 [joshwcomeauv dark-mode-flash](https://www.joshwcomeau.com/css/css-variables-for-react-devs/#dark-mode-flash-fix)
@@ -324,7 +324,7 @@ next.js SSR, SSG 는 서버에서 HTML 을 한다는 점을 다시 인지하게 
 
 평소 React 에서 하듯 **window 혹은 document** 에 접근해서 에러가 발생하는 경우가 많았습니다 ㅠㅜ..
 
-<img width="50%" alt="document-is-not-defined" src="/images/darkLight/document-is-not-defined.jpg" />
+<img width="50%" loading="lazy" alt="document-is-not-defined" src="/images/darkLight/document-is-not-defined.jpg" />
 
 하나씩 해결해가는 과정이 즐거웠습니다. 😋 <br />
 이와 더불어 동일한 현상을 겪은 분들의 문제 해석 및 해결 방식을 보며 배울 수 있는 좋은 시간이였습니다! 🚀
