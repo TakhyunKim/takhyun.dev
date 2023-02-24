@@ -46,7 +46,7 @@ HabitTree 는 **삶의 루틴을 정하고 성취감을 얻을 수 있는 어플
 디자인은 `figma` 를 통해 진행했습니다. 위에 첨부한 링크가 HabitTree 의 릴리즈 1.0v 디자인입니다.<br />
 아래에는 간단하게 볼 수 있는 디자인 이미지입니다.
 
-<img width="100%" alt="last-layout" src="/images/habitTree/design.jpg" />
+<img width="100%" loading="lazy" alt="last-layout" src="/images/habitTree/design.jpg" />
 
 ## 앞으로의 목표
 

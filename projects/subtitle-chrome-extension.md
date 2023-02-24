@@ -141,7 +141,7 @@ translationElement.addEventListener("click", async () => {
 ```
 
 이렇게 실행할 경우? 아래와 같이 에러가 발생하게 됩니다 ㅠ<br />
-<img width="50%" alt="not defined error" src="/images/subtitle/not-defined-error.jpg" />
+<img width="50%" loading="lazy" alt="not defined error" src="/images/subtitle/not-defined-error.jpg" />
 여기서 생각보다 많은 시간을 소요했습니다. '코드에는 별 문제가 없어보이고 잘 선언한 것 같은데 왜 저 함수를 찾지 못하는거지??<br />
 처음 개발해보는 Chrome extension, 처음 사용해보는 MutationObserver 등 에러를 처음 본 저는 원인이 너무 많다고 느꼈습니다..<br />
 
@@ -153,7 +153,7 @@ translationElement.addEventListener("click", async () => {
 우선 목표한 시간 내 기능 구현을 해야하므로 `startApplyClosedCaption` function 내에 선언 후 사용하는 방향으로 진행했습니다.<br />
 
 **위에서 겪은 에러를 해결해서 번역하기 전 자막을 띄우는데 성공했습니다!🎉**<br />
-<img width="50%" alt="same subtitle" src="/images/subtitle/same-subtitle.jpg" />
+<img width="50%" loading="lazy" alt="same subtitle" src="/images/subtitle/same-subtitle.jpg" />
 
 ### CORS 에러
 
@@ -245,7 +245,7 @@ chrome api 를 통해 통신하는 로직, DOM 핸들링 로직이 함께 존재
 
 ### 아키텍처 다이아그램
 
-<img width="90%" alt="structure" src="/images/subtitle/structure.jpg" />
+<img width="90%" loading="lazy" alt="structure" src="/images/subtitle/structure.jpg" />
 
 ## 앞으로의 목표
 
