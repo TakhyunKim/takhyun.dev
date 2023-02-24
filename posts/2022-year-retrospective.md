@@ -41,8 +41,8 @@ postingType: "posts"
 이 중 번역 크롬 익스텐션을 개발하면서 직면한 문제들을 하나하나 풀어가는 과정이 정말 즐거웠다.🤗<br />
 아래 사진은 개발하면서 겪은 이슈를 정리하고, 어떻게 해결할 수 있을지를 적은 것이다.
 
-<img width="50%" alt="extension design pattern" src="/images/2022Year/extension-design-pattern.jpg" />
-<img width="50%" alt="extension setting" src="/images/2022Year/extension-setting.jpg" />
+<img width="50%" loading="lazy" alt="extension design pattern" src="/images/2022Year/extension-design-pattern.jpg" />
+<img width="50%" loading="lazy" alt="extension setting" src="/images/2022Year/extension-setting.jpg" />
 _(번역 크롬 익스텐션은 아주아주 잘 사용하고 있다.)_
 
 ### 새로운 목표 1일 1커밋
@@ -54,7 +54,7 @@ _(번역 크롬 익스텐션은 아주아주 잘 사용하고 있다.)_
 커밋을 남기며 잔디 남기는 재미를 느끼고 있다.<br />
 이는 앞으로도 할 수 있을 때까지 해볼 생각이다.<br />
 _(나름 공부를 하는 원동력도 되고, 잔디를 보면 흐뭇함도 느낄 수 있다. 😁)_
-<img width="50%" alt="commit everyday" src="/images/2022Year/commit.jpg" />
+<img width="50%" loading="lazy" alt="commit everyday" src="/images/2022Year/commit.jpg" />
 
 ### 공부하는 방법
 
@@ -93,7 +93,7 @@ _(나름 공부를 하는 원동력도 되고, 잔디를 보면 흐뭇함도 느
 
 물론 재밌다고 성적이 잘 나오진 않았다.<br />
 아래는 나의 1학년 2학기 성적이다.
-<img width="50%" alt="성적" src="/images/2022Year/grade-card.jpg" />
+<img width="50%" loading="lazy" alt="성적" src="/images/2022Year/grade-card.jpg" />
 
 이번년도에는 모든 과목 B+ 이상 목표로 더욱 열심히 해볼 생각이다.<br />
 이번에 2학년도 신청했다. 30살 졸업을 목표로 최선을 다할 것이다.
@@ -122,7 +122,7 @@ _(나름 공부를 하는 원동력도 되고, 잔디를 보면 흐뭇함도 느
 적응을 했고 덕분에 지금은 나름대로? 시간 분배, 생활비 등 빵꾸없이 잘 내고 있다.
 
 (저축은 한번도 못했다는게 함정) + (예상치 못한 가스 비용 폭탄에 이번 달은 큰일이다.)
-<img width="20%" alt="동공 지진" src="/images/2022Year/cat.gif" />
+<img width="20%" loading="lazy" alt="동공 지진" src="/images/2022Year/cat.gif" />
 
 ## 테마 Ⅳ 마무리
 

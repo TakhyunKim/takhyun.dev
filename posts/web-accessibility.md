@@ -18,7 +18,7 @@ postingType: "posts"
 > - next.js 초기 셋업을 하면서 놓쳤던 html lang 속성 적용하기 (웹접근성)
 > - light mode text color 명암비 이슈 (웹접근성)
 
-<img width="50%" alt="measurement my blog" src="/images/webAccessibility/measurement.jpg" />
+<img width="50%" loading="lazy" alt="measurement my blog" src="/images/webAccessibility/measurement.jpg" />
 위 포스트를 작성하는 시점에서 이미 SEO 에 대한 조치는 했기에 위 이미지와 같은 측정값이 나오게 되었습니다.<br />
 그럼 이번에 적용한 SEO 부터 다뤄보겠습니다.
 
@@ -55,7 +55,7 @@ const Posts = () => {
 _(이번에도 개념 설명은 생략하겠습니다)_<br />
 
 `openGraph` 설정을 하기 전, 저의 블로그 링크를 카카오톡으로 공유할 시 아래와 같이 표기되었습니다.<br />
-<img width="40%" alt="prev-open-graph" src="/images/webAccessibility/prev-open-graph.jpg" />
+<img width="40%" loading="lazy" alt="prev-open-graph" src="/images/webAccessibility/prev-open-graph.jpg" />
 별다른 내용이 보이지 않고, 예전에 title 로 지정했던 takhyun blog 만 확인할 수 있습니다.
 
 이게 왜 필요할지 생각해보면, 보통 카톡으로 URL 을 주고 받을 때(특히 유튜브 영상과 같은?)<br />
@@ -98,17 +98,17 @@ const Home = () => {
 이렇게 `openGraph prop` 에서 **title**, **url**, **description**, **images** 를 적용했습니다.<br />
 이렇게 적용해본 결과 아래와 같이 더욱 상세한 내용을 확인할 수 있게 되었습니다.
 
-<img width="40%" alt="after-open-graph" src="/images/webAccessibility/after-open-graph.jpg" />
+<img width="40%" loading="lazy" alt="after-open-graph" src="/images/webAccessibility/after-open-graph.jpg" />
 
 그 밖에도 post page 에도 openGraph 를 적용해본 결과 아래와 같이 썸네일, Title, 설명을 확인할 수 있게 되었습니다.
-<img width="40%" alt="open-graph-dark-light-mode" src="/images/webAccessibility/open-graph-dark-light-mode.jpg" />
+<img width="40%" loading="lazy" alt="open-graph-dark-light-mode" src="/images/webAccessibility/open-graph-dark-light-mode.jpg" />
 
 ## html lang 속성 적용하기 (웹접근성)
 
 웹 접근성에 대한 측정을 할 때 짚어준 내용 중 하나인 국제화, 현지화에 대한 이슈를 해결하고자<br />
 html tag 에 lang 속성을 적용했습니다. 아래엔 web 측정 시 표기된 내용입니다.
 
-<img width="50%" alt="html-lang" src="/images/webAccessibility/html-lang.jpg" />
+<img width="50%" loading="lazy" alt="html-lang" src="/images/webAccessibility/html-lang.jpg" />
 
 이는 간단하게 `_document.tsx` 파일에서 Html component 의 lang prop 을 통해 지정하여 해결했습니다.
 
@@ -136,16 +136,16 @@ export default class MyDocument extends Document {
 ## light mode text color 명암비 이슈 (웹접근성)
 
 이 외에도 웹 접근성에서 하나 이슈가 된 것은 배경색과 글자색 간 명암비였습니다.
-<img width="40%" alt="background-text-color" src="/images/webAccessibility/background-text-color.jpg" />
+<img width="40%" loading="lazy" alt="background-text-color" src="/images/webAccessibility/background-text-color.jpg" />
 
 위 이미지를 보시면 아시겠지만, Light mode 일 때 일부 글자색이 잘 보이지 않는 이슈가 있습니다.<br />
 이를 해결하기 위해 역시 간단하게 텍스트 color 를 변경했습니다!
 
-<img width="40%" alt="text-color-modified" src="/images/webAccessibility/text-color-modified.jpg" />
+<img width="40%" loading="lazy" alt="text-color-modified" src="/images/webAccessibility/text-color-modified.jpg" />
 
 보다 명확하게 보이는 것을 확인할 수 있습니다. 이렇게 `html lang 속성`, `light mode text color` 명암비 이슈를 해결하고난 후,<br />
 
-<img width="50%" alt="measurement-modified" src="/images/webAccessibility/measurement-modified.jpg" />
+<img width="50%" loading="lazy" alt="measurement-modified" src="/images/webAccessibility/measurement-modified.jpg" />
 
 100% 로 채워져있는 `Accessibility` 를 확인할 수 있었습니다. 🎉
 
