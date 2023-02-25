@@ -8,7 +8,7 @@ const Footer: NextPage = () => {
   return (
     <footer className={styles.footer_wrapper}>
       <div className={styles.copyright_wrapper}>
-        Copyright © 2022 TakhyunKim{" "}
+        Copyright © {new Date().getFullYear()} TakhyunKim{" "}
       </div>
       <Link href="https://github.com/TakhyunKim">
         <a rel="noreferrer" target="_blank" className={styles.github_wrapper}>
