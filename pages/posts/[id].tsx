@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import type { DetailedHTMLProps, ImgHTMLAttributes } from "react";
 import type {
   NextPage,
   GetStaticPaths,
@@ -28,6 +29,41 @@ interface PostProps {
 interface PostStatic extends ParsedUrlQuery {
   id: string;
 }
+
+const components = {
+  img: (
+    props: DetailedHTMLProps<
+      ImgHTMLAttributes<HTMLImageElement>,
+      HTMLImageElement
+    >
+  ) => {
+    if (!props.alt || !props.src) return null;
+
+    const substrings = props.alt.split("{");
+    const alt = substrings[0].trim();
+    const imgInfo = substrings[1];
+    const imgWidth = imgInfo.match(/(?<=w:\s?)\d+/g);
+    const imgHeight = imgInfo.match(/(?<=h:\s?)\d+/g);
+    const parentImgWidth = imgInfo.match(/(?<=parentW:\s?)\d+/g);
+
+    const width = imgWidth ? imgWidth[0] : 600;
+    const height = imgHeight ? imgHeight[0] : 300;
+
+    const parentWidth = parentImgWidth ? parentImgWidth[0] : "50";
+
+    return (
+      <span style={{ display: "block", width: `${parentWidth}%` }}>
+        <Image
+          src={props.src}
+          alt={alt}
+          width={width}
+          height={height}
+          layout="responsive"
+        />
+      </span>
+    );
+  },
+};
 
 const Post: NextPage<PostProps> = ({
   postData: {
@@ -68,10 +104,10 @@ const Post: NextPage<PostProps> = ({
       <h3>{subtitle}</h3>
       <div className={styles.date}>{date}</div>
       <div className={styles.thumbnail_wrapper}>
-        <Image alt="thumbnail" src={thumbnailUrl} layout="fill" />
+        <Image priority alt="thumbnail" src={thumbnailUrl} layout="fill" />
       </div>
       <div className={styles.html_wrapper}>
-        <MDXRemote {...mdxSource} />
+        <MDXRemote components={components} {...mdxSource} />
       </div>
       <TopScrollButton />
       <TableOfContents tableOfContents={tableOfContents} />
