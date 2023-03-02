@@ -1,6 +1,6 @@
 ---
 title: "블로그 속도 개선하기"
-subtitle: "Next js Image 와 함께 느려진 웹페이지 속도 개선하기"
+subtitle: "Next js Image 로 느려진 웹페이지 속도 개선하기"
 date: "2023-02-27"
 thumbnailUrl: "/images/improvement/thumbnail.jpg"
 tag: "Image,web dev,next.js"
@@ -260,6 +260,14 @@ _(아래 이미지는 현재 작성 중인 포스팅 기준입니다.)_
 적용 전 이미지 총 사이즈는 `1.3MB` 이며, 적용 후 이미지 총 사이즈는 `280kB` 입니다.<br />
 무려 약 37배의 이미지 사이즈를 줄일 수 있었습니다.<br />
 지금까지의 과정을 통해 굉장히 많은 리소스를 줄일 수 있게 되었습니다.
+
+마지막으로 web dev 결과를 비교해보겠습니다.
+
+`개선 전 측정 결과`
+![prev optimization result {{ w: 700, h: 530, parentW: 50 }}](/images/improvement/prev-measured-web-dev.png)
+
+`개선 후 측정 결과`
+![after optimization result {{ w: 700, h: 530, parentW: 50 }}](/images/improvement/last-measured-web-dev.png)
 
 뿌듯하네용
 
