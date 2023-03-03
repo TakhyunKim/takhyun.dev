@@ -42,9 +42,16 @@ const components = {
     const substrings = props.alt.split("{");
     const alt = substrings[0].trim();
     const imgInfo = substrings[1];
-    const imgWidth = imgInfo.match(/(?<=w:\s?)\d+/g);
-    const imgHeight = imgInfo.match(/(?<=h:\s?)\d+/g);
-    const parentImgWidth = imgInfo.match(/(?<=parentW:\s?)\d+/g);
+
+    const imgWidth = imgInfo
+      .match(/w:\s\d+/g)
+      ?.map((match) => match.replace("w: ", ""));
+    const imgHeight = imgInfo
+      .match(/h:\s\d+/g)
+      ?.map((match) => match.replace("h: ", ""));
+    const parentImgWidth = imgInfo
+      .match(/parentW:\s\d+/g)
+      ?.map((match) => match.replace("parentW: ", ""));
 
     const width = imgWidth ? imgWidth[0] : 600;
     const height = imgHeight ? imgHeight[0] : 300;
