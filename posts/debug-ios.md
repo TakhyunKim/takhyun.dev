@@ -3,7 +3,7 @@ title: "IOS 디버깅 그리고 버그 수정"
 subtitle: "Reg lookbehind 미지원 브라우저 이슈 대응하기"
 date: "2023-03-04"
 thumbnailUrl: "/images/debugIos/thumbnail.jpg"
-tag: "IOS,Reg,behind"
+tag: "IOS,Reg,lookbehind"
 description: "IOS 환경 디버깅을 통한 문제파악 후 해결까지의 과정"
 postingType: "posts"
 ---
