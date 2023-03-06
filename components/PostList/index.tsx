@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import { useRouter } from "next/router";
 
 import type { PostData } from "../../lib/posts";
-import type { MarkdownPost } from "../../common/types/markdownPost";
 
 import PostItem from "./PostItem";
 

@@ -5,7 +5,7 @@ date: "2022-08-31"
 thumbnailUrl: "/images/darkLight/thumbnail.jpg"
 tag: "next.js,theme"
 description: "Next js 에서 다크, 라이트 테마 모드를 적용했습니다"
-postingType: "posts"
+postingType: "post"
 ---
 
 ⭐️ **이번 글에서 다룰 내용입니다!** ⭐️

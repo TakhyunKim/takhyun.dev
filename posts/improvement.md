@@ -5,7 +5,7 @@ date: "2023-02-27"
 thumbnailUrl: "/images/improvement/thumbnail.jpg"
 tag: "Image,web dev,next.js"
 description: "이미지 최적화를 통해 속도 개선하는 과정"
-postingType: "posts"
+postingType: "post"
 ---
 
 > 이 글은 유저에게 썸네일을 보다 빠르게 보여주기 위한 과정을 정리하며 동시에<br />
