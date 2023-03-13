@@ -257,13 +257,36 @@ chrome api 를 통해 통신하는 로직, DOM 핸들링 로직이 함께 존재
 
 > - 기존 번역 버튼 대신 on off 스위치 도입 및 자막 on off 기능 구현 - ✅<br />
 > - 자막 요청 시 즉시 자막 추가 및 삭제가 가능하도록 기능 개선 (현재는 자막이 변경되어야 한글 자막이 추가됨) - ✅<br />
-> - 동일한 text 에 대한 번역 API 요청하는 이슈 개선<br />
-> - youtube, 유데미 등 다른 사이트도 지원<br />
+> - 동일한 text 에 대한 번역 API 요청하는 이슈 개선 - ✅<br />
+> - youtube, 유데미 등 다른 사이트도 지원 - ✅<br />
 > - 자막 pdf 생성 기능 구현<br />
 
 ### 진행 사항
 
-> - 2022년 11월 05일 기준 1.1.0 version 게시했습니다~<br /> [1.1.0 version Release note](https://github.com/TakhyunKim/Closed-caption-korean/releases/tag/v1.1.0)<br />[익스텐션 설치 URL](https://chrome.google.com/webstore/detail/closed-caption-korean/pjfhdffkbjfneojiamjnooaagomkimde?hl=ko&authuser=0)
+major, minor 업데이트에 대한 내용만 다루고 있습니다.
+
+> - 2022년 11월 05일 기준 1.1.0 version 릴리즈<br />
+>   버튼 대신 스위치를 통해 번역 on off 및 내부 코드 개선<br /> [1.1.0 version Release note](https://github.com/TakhyunKim/Closed-caption-korean/releases/tag/v1.1.0)<br />
+
+> - 2022년 11월 29일 기준 1.2.0 version 릴리즈<br />
+>   Udemy 사이트 지원 <br /> [1.2.0 version Release note](https://github.com/TakhyunKim/Closed-caption-korean/releases/tag/v1.2.0)<br />
+
+> - 2022년 12월 04일 기준 1.3.0 version 릴리즈<br />
+>   Youtube 사이트 지원 <br />
+>   익스텐션 스타일, 레이아웃 개선<br /> [1.3.0 version Release note](https://github.com/TakhyunKim/Closed-caption-korean/releases/tag/v1.3.0)<br />
+
+> - 2022년 12월 23일 기준 1.4.0 version 릴리즈<br />
+>   Epic React 사이트 지원 <br />
+>   Font Size 변경 기능 추가<br /> [1.4.0 version Release note](https://github.com/TakhyunKim/Closed-caption-korean/releases/tag/v1.4.0)<br />
+
+> - 2023년 03월 09일 기준 1.5.0 version 릴리즈<br />
+>   내부 코드 개선 <br />
+>   익스텐션, 자막 스위치 on off 단축키 지원<br /> [1.5.0 version Release note](https://github.com/TakhyunKim/Closed-caption-korean/releases/tag/v1.5.0)<br />
+
+> - 2023년 03월 12일 기준 2.0.0 version 릴리즈<br />
+>   프로젝트 네이밍 변경 closed caption korean -> closed caption - dual subtitle viewer <br />
+>   지원 가능 언어 확대<br />
+>   번역 언어 선택 Selector 추가<br /> [2.0.0 version Release note](https://github.com/TakhyunKim/Closed-caption-korean/releases/tag/v2.0.0)<br />
 
 ## 개발을 진행하면서 느낀점
 
