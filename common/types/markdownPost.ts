@@ -1,1 +1,1 @@
-export type MarkdownPost = "posts" | "projects";
+export type MarkdownPost = "post" | "project";
