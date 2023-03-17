@@ -5,7 +5,7 @@ date: "2022-11-05"
 thumbnailUrl: "/images/subtitle/thumbnail.jpg"
 tag: "Chrome-extension,typescript,manifest-v3"
 description: "영어, 한글 자막을 함께 보는 나만의 크롬 익스텐션 개발"
-postingType: "projects"
+postingType: "project"
 ---
 
 > 요약
