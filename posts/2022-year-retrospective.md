@@ -5,7 +5,7 @@ date: "2023-01-29"
 thumbnailUrl: "/images/2022Year/thumbnail.jpg"
 tag: "2022년,회고,프론트엔드"
 description: "2022년 회고입니당. 개발자로, 대학생으로, 그저 평범한 사람으로"
-postingType: "posts"
+postingType: "post"
 ---
 
 > 글을 작성하기에 앞서 회고는 정말 편하게 작성하고자 합니다! <br />

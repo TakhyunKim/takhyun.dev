@@ -5,7 +5,7 @@ date: "2022-08-20"
 thumbnailUrl: "/images/createBlog/thumbnail.jpg"
 tag: "react,next.js,typescript"
 description: "next js 로 개인 블로그 만들기 (with Typescript)"
-postingType: "posts"
+postingType: "post"
 ---
 
 기술 블로그를 만들고 싶었고, 현재 블로그는 [next.js](https://nextjs.org/) 로 만들었습니다.<br />

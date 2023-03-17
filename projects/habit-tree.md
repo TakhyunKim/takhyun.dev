@@ -5,7 +5,7 @@ date: "2022-08-21"
 thumbnailUrl: "/images/habitTree/thumbnail.jpg"
 tag: "App,react-native,typescript"
 description: "HabitTree 루틴 어플을 만들고 있습니다"
-postingType: "projects"
+postingType: "project"
 ---
 
 > 짧은 요약

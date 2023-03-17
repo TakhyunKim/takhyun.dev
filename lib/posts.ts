@@ -102,8 +102,8 @@ export const getPostingData = ({ postType }: PostType) => {
 };
 
 export const getSortedPostsAndProjectsData = () => {
-  const allPostsData = getPostingData({ postType: "post" });
-  const allProjectsData = getPostingData({ postType: "project" });
+  const allPostsData = getPostingData({ postType: "posts" });
+  const allProjectsData = getPostingData({ postType: "projects" });
 
   const allPostsAndProjectsData = [...allPostsData, ...allProjectsData];
 

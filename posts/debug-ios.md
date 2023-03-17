@@ -5,7 +5,7 @@ date: "2023-03-04"
 thumbnailUrl: "/images/debugIos/thumbnail.jpg"
 tag: "IOS,Reg,lookbehind"
 description: "IOS 환경 디버깅을 통한 문제파악 후 해결까지의 과정"
-postingType: "posts"
+postingType: "post"
 ---
 
 > 이 글은 IOS 환경에서 포스팅이 동작하지 않는 이슈를 확인하고<br />
