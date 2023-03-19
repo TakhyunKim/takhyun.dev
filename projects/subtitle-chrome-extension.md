@@ -96,7 +96,7 @@ html 에서 간단하게 translation 버튼을 만들었으니, 이젠 `popup.js
 
 ---
 
-### chrome scripting executeScript & is not defined 에러
+### chrome scripting executeScript and is not defined 에러
 
 처음 1.0.0 버전을 개발했을 땐 popup.js 에서 모든 기능을 실행했습니다.<br />
 하나의 함수에서 모든 일을 처리하고 있었고, 이를 해결하기 위해 하나의 역할만 수행할 수 있도록 별도의 함수를 선언해서 로직을 분리했습니다.<br />
