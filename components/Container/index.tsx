@@ -23,16 +23,30 @@ const Container = (props: ContainerProps) => {
   return (
     <div className={styles.wrapper}>
       <Head>
-        <title>takhyun blog</title>
+        <title>김탁현의 개발 블로그</title>
       </Head>
       <div className={styles.content_wrapper}>
         <header className={styles.header}>
           <Nav />
           <div className={styles.header_profile_theme_wrapper}>
+            <a href="mailto:kimkih1218@gmail.com" className={styles.link}>
+              <Image src="/images/email.svg" alt="mail" layout="fill" />
+            </a>
+            <a
+              href="https://github.com/TakhyunKim"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.link}
+            >
+              <Image src="/images/github.svg" alt="github" layout="fill" />
+            </a>
             <ThemeButton />
-            <div onClick={handleProfileClick} className={styles.header_profile}>
+            <button
+              onClick={handleProfileClick}
+              className={styles.header_profile}
+            >
               <Image src="/images/profile.jpg" alt="profile" layout="fill" />
-            </div>
+            </button>
           </div>
         </header>
         <main className={styles.main}>{props.children}</main>
