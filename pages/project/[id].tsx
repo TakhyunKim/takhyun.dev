@@ -50,6 +50,16 @@ const Post: NextPage<PostProps> = ({
       <NextSeo
         title={title}
         description={description}
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content: `프로젝트, 프론트엔드, 프론트엔드 개발자, 개발 블로그, 프론트엔드 개발 블로그, 프론트엔드 개발자 김탁현, 김탁현 개발 블로그`,
+          },
+          {
+            name: "author",
+            content: "김탁현",
+          },
+        ]}
         openGraph={{
           type: "website",
           title,

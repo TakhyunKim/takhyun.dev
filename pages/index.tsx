@@ -16,13 +16,24 @@ const Home: NextPage<HomeProps> = ({ recentPosts }) => {
     <>
       <Introduce />
       <NextSeo
-        title="Takhyun Kim & Frontend Engineer"
-        description="프론트엔드 개발자 김탁현의 기술 블로그"
+        title="김탁현의 개발 블로그"
+        description="프론트엔드 개발자 김탁현의 개발 블로그"
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content:
+              "프론트엔드, 프론트엔드 개발자, 개발 블로그, 프론트엔드 개발 블로그, 프론트엔드 개발자 김탁현, 김탁현 개발 블로그",
+          },
+          {
+            name: "author",
+            content: "김탁현",
+          },
+        ]}
         openGraph={{
           type: "website",
           url: "https://takhyun.dev",
-          title: "Takhyun Kim 기술 블로그",
-          description: "프론트엔드 개발자 김탁현의 기술 블로그",
+          title: "김탁현의 개발 블로그",
+          description: "프론트엔드 개발자 김탁현의 개발 블로그",
           images: [
             {
               url: "https://takhyun.dev/images/intro-profile.jpg",
