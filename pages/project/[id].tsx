@@ -31,9 +31,10 @@ interface PostStatic extends ParsedUrlQuery {
 
 const Post: NextPage<PostProps> = ({
   postData: {
-    title,
-    subtitle,
     date,
+    title,
+    tagList,
+    subtitle,
     mdxSource,
     thumbnailUrl,
     description,
@@ -54,6 +55,10 @@ const Post: NextPage<PostProps> = ({
           {
             name: "keywords",
             content: `프로젝트, 프론트엔드, 프론트엔드 개발자, 개발 블로그, 프론트엔드 개발 블로그, 프론트엔드 개발자 김탁현, 김탁현 개발 블로그`,
+          },
+          {
+            name: "keywords",
+            content: `${tagList.join()}`,
           },
           {
             name: "author",
