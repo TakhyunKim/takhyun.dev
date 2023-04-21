@@ -7,7 +7,6 @@
   padding: 1rem;
   border: 1px solid var(--border-color);
   border-radius: 10px;
-  cursor: pointer;
   overflow: hidden;
   box-shadow: 10px 20px 20px 0 var(--box-shadow-color);
   transition: 0.5s ease;
@@ -22,7 +21,6 @@
   padding: 1rem;
   border: 1px solid var(--border-color);
   border-radius: 10px;
-  cursor: pointer;
   overflow: hidden;
   background-color: var(--box-bg-hovered-color);
   box-shadow: 10px 20px 20px 0 var(--box-shadow-hovered-color);
@@ -34,6 +32,7 @@
 }
 
 .post_thumbnail {
+  display: block;
   position: relative;
   width: 100%;
   min-height: 11rem;
@@ -41,10 +40,13 @@
   border-radius: 5px;
   background-color: gray;
   overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .default_post {
   border: none;
+  cursor: pointer;
 }
 
 .tag_list_date_wrapper {
@@ -88,7 +90,6 @@
     padding: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 10px;
-    cursor: pointer;
     overflow: hidden;
     box-shadow: 10px 20px 20px 0 var(--box-shadow-color);
     transition: 0.5s ease;
@@ -103,7 +104,6 @@
     padding: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 10px;
-    cursor: pointer;
     overflow: hidden;
     box-shadow: 10px 20px 20px 0 var(--box-shadow-hovered-color);
     transition: 0.5s ease;
