@@ -14,7 +14,7 @@ const Projects: NextPage<ProjectsProps> = ({ allProjectsData }) => {
   return (
     <>
       <NextSeo
-        title="Takhyun Kim 프로젝트 목록"
+        title="김탁현 개발 프로젝트 목록"
         description="개인 프로젝트를 확인할 수 있는 페이지입니다"
         additionalMetaTags={[
           {
@@ -29,7 +29,7 @@ const Projects: NextPage<ProjectsProps> = ({ allProjectsData }) => {
         ]}
         openGraph={{
           type: "website",
-          title: "Takhyun Kim 프로젝트 목록",
+          title: "김탁현 개발 프로젝트 목록",
           description: "개인 프로젝트를 확인할 수 있는 페이지입니다",
           url: "https://takhyun.dev/projects",
           images: [

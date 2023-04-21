@@ -97,7 +97,8 @@ const Post: NextPage<PostProps> = ({
         additionalMetaTags={[
           {
             name: "keywords",
-            content: `포스팅, 프론트엔드, 프론트엔드 개발자, 개발 블로그, 프론트엔드 개발 블로그, 프론트엔드 개발자 김탁현, 김탁현 개발 블로그`,
+            content:
+              "포스팅, 프론트엔드, 프론트엔드 개발자, 개발 블로그, 프론트엔드 개발 블로그, 프론트엔드 개발자 김탁현, 김탁현 개발 블로그",
           },
           {
             name: "keywords",

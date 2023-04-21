@@ -14,7 +14,7 @@ const Posts: NextPage<PostsProps> = ({ allPostsData }) => {
   return (
     <>
       <NextSeo
-        title="Takhyun Kim 포스팅 목록"
+        title="김탁현 개발 포스팅 목록"
         description="기술, 개인 일상 관련 포스팅을 작성했습니다"
         additionalMetaTags={[
           {
@@ -29,7 +29,7 @@ const Posts: NextPage<PostsProps> = ({ allPostsData }) => {
         ]}
         openGraph={{
           type: "website",
-          title: "Takhyun Kim 포스팅 목록",
+          title: "김탁현 개발 포스팅 목록",
           url: "https://takhyun.dev/posts",
           description: "기술, 개인 일상 관련 포스팅을 작성했습니다",
           images: [
