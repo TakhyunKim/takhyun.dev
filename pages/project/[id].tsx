@@ -11,7 +11,7 @@ import { MDXRemote } from "next-mdx-remote";
 import hljs from "highlight.js";
 import { NextSeo } from "next-seo";
 
-import "highlight.js/styles/vs2015.css";
+import "highlight.js/styles/atom-one-dark.css";
 
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import type { PostDataWithHtml } from "../../lib/posts";

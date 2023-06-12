@@ -78,14 +78,15 @@
   border: 1px solid var(--post-text-color);
   border-radius: 10px;
   overflow: hidden;
+  background-color: none;
 }
 
 .html_wrapper pre code {
-  color: var(--post-text-color);
+  color: #d1d5db;
   font-size: 1rem;
   font-weight: initial;
   font-family: inherit;
-  background: none;
+  background-color: #292c33;
 }
 
 @media (max-width: 768px) {
