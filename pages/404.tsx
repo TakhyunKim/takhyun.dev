@@ -23,11 +23,7 @@ const NotFound: NextPage<NotFoundProps> = ({ recentPosts }) => {
       />
       <div className={styles.header_wrapper}>
         <div className={styles.intro_profile}>
-          <Image
-            src="/images/intro-profile.jpg"
-            layout="fill"
-            alt="intro profile"
-          />
+          <Image fill src="/images/intro-profile.jpg" alt="intro profile" />
         </div>
         <NotFoundHeader />
       </div>

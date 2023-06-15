@@ -6,7 +6,7 @@ import type {
   GetStaticProps,
   GetStaticPropsContext,
 } from "next";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import type { ParsedUrlQuery } from "querystring";
 import { MDXRemote } from "next-mdx-remote";
 import hljs from "highlight.js";
@@ -53,8 +53,8 @@ const components = {
       .match(/parentW:\s\d+/g)
       ?.map((match) => match.replace("parentW: ", ""));
 
-    const width = imgWidth ? imgWidth[0] : 600;
-    const height = imgHeight ? imgHeight[0] : 300;
+    const width = imgWidth ? Number(imgWidth[0]) : 600;
+    const height = imgHeight ? Number(imgHeight[0]) : 300;
 
     const parentWidth = parentImgWidth ? parentImgWidth[0] : "50";
 

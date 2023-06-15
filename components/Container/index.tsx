@@ -30,7 +30,7 @@ const Container = (props: ContainerProps) => {
           <Nav />
           <div className={styles.header_profile_theme_wrapper}>
             <a href="mailto:kimkih1218@gmail.com" className={styles.link}>
-              <Image src="/images/email.svg" alt="mail" layout="fill" />
+              <Image src="/images/email.svg" alt="mail" fill />
             </a>
             <a
               href="https://github.com/TakhyunKim"
@@ -38,14 +38,14 @@ const Container = (props: ContainerProps) => {
               rel="noreferrer"
               className={styles.link}
             >
-              <Image src="/images/github.svg" alt="github" layout="fill" />
+              <Image src="/images/github.svg" alt="github" fill />
             </a>
             <ThemeButton />
             <button
               onClick={handleProfileClick}
               className={styles.header_profile}
             >
-              <Image src="/images/profile.jpg" alt="profile" layout="fill" />
+              <Image src="/images/profile.jpg" alt="profile" fill />
             </button>
           </div>
         </header>

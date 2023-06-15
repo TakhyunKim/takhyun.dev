@@ -10,7 +10,7 @@ const TopScrollButton = () => {
 
   return (
     <button className={styles.button} onClick={handleScrollupButtonClick}>
-      <Image src="/images/top.svg" alt="top scroll" layout="fill" />
+      <Image src="/images/top.svg" alt="top scroll" fill />
     </button>
   );
 };
