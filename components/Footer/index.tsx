@@ -10,10 +10,14 @@ const Footer: NextPage = () => {
       <div className={styles.copyright_wrapper}>
         Copyright © {new Date().getFullYear()} TakhyunKim{" "}
       </div>
-      <Link href="https://github.com/TakhyunKim">
-        <a rel="noreferrer" target="_blank" className={styles.github_wrapper}>
-          <Image src="/images/github.svg" alt="github icon" layout="fill" />
-        </a>
+      <Link
+        rel="noreferrer"
+        target="_blank"
+        href="https://github.com/TakhyunKim"
+      >
+        <div className={styles.github_wrapper}>
+          <Image src="/images/github.svg" alt="github icon" fill />
+        </div>
       </Link>
     </footer>
   );

@@ -11,16 +11,16 @@ const Nav = () => {
   return (
     <nav className={styles.wrapper}>
       {navLinks.map((nav) => (
-        <Link href={nav.link} key={nav.title}>
-          <a
-            className={
-              pathname.includes(nav.link)
-                ? styles.nav_text_clicked
-                : styles.nav_text
-            }
-          >
-            {nav.title}
-          </a>
+        <Link
+          className={
+            pathname.includes(nav.link)
+              ? styles.nav_text_clicked
+              : styles.nav_text
+          }
+          href={nav.link}
+          key={nav.title}
+        >
+          {nav.title}
         </Link>
       ))}
     </nav>

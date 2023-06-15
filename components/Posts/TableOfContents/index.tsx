@@ -40,8 +40,8 @@ const TableOfContent = ({
 
   return (
     <li className={styles.table_of_content} style={style} key={text}>
-      <Link href={link} key={text}>
-        <a onClick={scrollToHeader}>{text}</a>
+      <Link href={link} key={text} onClick={scrollToHeader}>
+        {text}
       </Link>
     </li>
   );

@@ -21,24 +21,15 @@ const PostItem: NextPage<PostItemProps> = ({
     <article className={styles.post_item_wrapper}>
       <div className={styles.post_content_wrapper}>
         <Link href={href}>
-          <a>
-            <div className={styles.post_thumbnail}>
-              <Image
-                priority
-                src={thumbnailUrl}
-                alt="thumbnail"
-                layout="fill"
-              />
-            </div>
-          </a>
+          <div className={styles.post_thumbnail}>
+            <Image fill priority src={thumbnailUrl} alt="thumbnail" />
+          </div>
         </Link>
         <Link href={href}>
-          <a>
-            <div className={styles.default_post}>
-              <div className={styles.title}>{title}</div>
-              <div className={styles.sub_title}>{subtitle}</div>
-            </div>
-          </a>
+          <div className={styles.default_post}>
+            <div className={styles.title}>{title}</div>
+            <div className={styles.sub_title}>{subtitle}</div>
+          </div>
         </Link>
       </div>
       <div className={styles.tag_list_date_wrapper}>
