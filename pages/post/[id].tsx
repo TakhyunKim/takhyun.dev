@@ -6,7 +6,7 @@ import type {
   GetStaticProps,
   GetStaticPropsContext,
 } from "next";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import type { ParsedUrlQuery } from "querystring";
 import { MDXRemote } from "next-mdx-remote";
 import hljs from "highlight.js";
@@ -65,6 +65,7 @@ const components = {
           alt={alt}
           width={width}
           height={height}
+          // TODO: responsive 삭제 필요
           layout="responsive"
         />
       </span>
