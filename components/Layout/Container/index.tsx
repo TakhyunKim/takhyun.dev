@@ -1,12 +1,13 @@
 import type { ReactNode } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
-import Nav from "../Nav";
+import Navigation from "../Navigation";
 import Footer from "../Footer";
-import ThemeButton from "./ThemeButton";
+import ThemeButton from "../ThemeButton";
+import ProfileButton from "../ProfileButton";
 
+import "../../../styles/globals.css";
 import styles from "./Container.module.css";
 
 interface ContainerProps {
@@ -14,12 +15,6 @@ interface ContainerProps {
 }
 
 const Container = (props: ContainerProps) => {
-  const router = useRouter();
-
-  const handleProfileClick = () => {
-    router.push("/");
-  };
-
   return (
     <div className={styles.wrapper}>
       <Head>
@@ -27,7 +22,7 @@ const Container = (props: ContainerProps) => {
       </Head>
       <div className={styles.content_wrapper}>
         <header className={styles.header}>
-          <Nav />
+          <Navigation />
           <div className={styles.header_profile_theme_wrapper}>
             <a href="mailto:kimkih1218@gmail.com" className={styles.link}>
               <Image src="/images/email.svg" alt="mail" fill />
@@ -41,12 +36,7 @@ const Container = (props: ContainerProps) => {
               <Image src="/images/github.svg" alt="github" fill />
             </a>
             <ThemeButton />
-            <button
-              onClick={handleProfileClick}
-              className={styles.header_profile}
-            >
-              <Image src="/images/profile.jpg" alt="profile" fill />
-            </button>
+            <ProfileButton />
           </div>
         </header>
         <main className={styles.main}>{props.children}</main>

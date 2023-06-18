@@ -1,10 +1,21 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-import { getTheme } from "../../../common/utils/getTheme";
-import { setTheme as setDocumentTheme } from "../../../common/utils/setTheme";
-
 import styles from "./ThemeButton.module.css";
+
+const getTheme = () => {
+  const themeAttribute = document.body.getAttribute("data-theme");
+
+  return themeAttribute;
+};
+
+const setDocumentTheme = (theme: "dark" | "light") => {
+  document.body.setAttribute("data-theme", theme);
+
+  window.localStorage.setItem("theme", theme);
+};
 
 const ThemeButton = () => {
   const [theme, setTheme] = useState<string | null>();
@@ -30,9 +41,9 @@ const ThemeButton = () => {
   return (
     <button className={styles.button} onClick={handleChangeTheme}>
       <Image
+        fill
         src={`/images/${theme === "dark" ? "moon" : "sun"}.svg`}
         alt="theme icon"
-        layout="fill"
       />
     </button>
   );

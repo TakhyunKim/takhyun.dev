@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-import type { PostData } from "../../lib/posts";
+import type { PostData } from "../../../lib/posts";
 
 import PostItem from "./PostItem";
 

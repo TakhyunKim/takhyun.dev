@@ -1,12 +1,14 @@
+"use client";
+
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
-import navLinks from "../../common/routes";
+import navLinks from "../../../common/routes";
 
-import styles from "./Nav.module.css";
+import styles from "./Navigation.module.css";
 
-const Nav = () => {
-  const { pathname } = useRouter();
+const Navigation = () => {
+  const pathname = usePathname();
 
   return (
     <nav className={styles.wrapper}>
@@ -27,4 +29,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Navigation;

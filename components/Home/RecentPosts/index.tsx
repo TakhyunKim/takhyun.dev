@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 
 import type { PostData } from "../../../lib/posts";
 
-import PostList from "../../PostList";
+import PostList from "../../../common/components/PostList";
 
 import styles from "./RecentPost.module.css";
 
