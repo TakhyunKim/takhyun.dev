@@ -8,7 +8,7 @@ import rehypeSlug from "rehype-slug";
 
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
-import type { MarkdownPost } from "../common/types/markdownPost";
+export type MarkdownPost = "posts" | "projects";
 
 export interface TableOfContent {
   text: string;
@@ -122,9 +122,7 @@ export const getAllPostIds = ({ postType }: PostType) => {
 
   return fileNames.map((fileName) => {
     return {
-      params: {
-        id: fileName.replace(/\.md$/, ""),
-      },
+      id: fileName.replace(/\.md$/, ""),
     };
   });
 };
@@ -162,7 +160,10 @@ export const getHeadings = (source: string): TableOfContents[] => {
   return headings;
 };
 
-export const getPostData = async ({ postType, id }: PostDataParams) => {
+export const getPostData = async ({
+  postType,
+  id,
+}: PostDataParams): Promise<PostDataWithHtml> => {
   const postsDirectory = path.join(process.cwd(), postType);
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -188,6 +189,13 @@ export const getPostData = async ({ postType, id }: PostDataParams) => {
     mdxSource,
     contentHtml,
     tableOfContents,
-    ...(matterResult.data as { title: string; date: string }),
+    ...(matterResult.data as {
+      title: string;
+      date: string;
+      subtitle: string;
+      description: string;
+      thumbnailUrl: string;
+      postingType: MarkdownPost;
+    }),
   };
 };
