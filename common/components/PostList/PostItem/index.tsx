@@ -6,7 +6,7 @@ import Tag from "./Tag";
 import styles from "./PostItem.module.css";
 
 import type { NextPage } from "next";
-import type { PostData } from "../../../../lib/posts";
+import type { PostData } from "../../../utils/posts";
 
 interface PostItemProps {
   href: string;
