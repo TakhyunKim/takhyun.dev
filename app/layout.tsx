@@ -1,3 +1,7 @@
+import Head from "next/head";
+
+import Container from "../components/Layout/Container";
+
 export const setInitialTheme = `(() => {
   if (typeof window !== "undefined") {
     const persistedColorPreference = window.localStorage.getItem("theme");
@@ -19,3 +23,19 @@ export const setInitialTheme = `(() => {
     }
   }
 })()`;
+
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <html lang="en">
+      <Head>
+        <title>김탁현의 개발 블로그</title>
+      </Head>
+      <body>
+        <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
+        <Container>{children}</Container>
+      </body>
+    </html>
+  );
+};
+
+export default RootLayout;
