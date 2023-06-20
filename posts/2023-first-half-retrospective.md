@@ -2,7 +2,7 @@
 title: "2023년 상반기 회고록"
 subtitle: "2023년 프론트엔드 개발자 회고"
 date: "2023-05-30"
-thumbnailUrl: "/images/2023FirstHalf/thumbnail.jpg"
+thumbnailUrl: "/images/2023FirstHalf/thumbnail.webp"
 tag: "2023년,회고,상반기,프론트엔드"
 description: "2023년 상반기 회고록, 시간이 너무너무 빨리 지나간다."
 postingType: "post"
@@ -32,7 +32,7 @@ postingType: "post"
 
 ### 1. 코드 리뷰
 
-![code review {{ w: 6000, h: 4000, parentW: 50 }}](/images/2023FirstHalf/code-review.jpg)
+![code review {{ w: 6000, h: 4000, parentW: 50 }}](/images/2023FirstHalf/code-review.webp)
 
 작년 한해 동안 코드 리뷰를 많이 못했다고 생각헀다. 함께 하는 프로젝트가 적었고<br />
 직접 코드를 작성하고, 이슈를 해결하는데 급급해서 코드 리뷰에 적극적으로 참여하기가 어려웠었다.<br />
@@ -52,7 +52,7 @@ postingType: "post"
 
 ### 2. 공부하는 방식을 보다 효율적으로 개선
 
-![improvement {{ w: 4600, h: 3070, parentW: 50 }}](/images/2023FirstHalf/improvement.jpg)
+![improvement {{ w: 4600, h: 3070, parentW: 50 }}](/images/2023FirstHalf/improvement.webp)
 
 공부하는 방식.. 사실 이건 처음 개발을 시작했을 때부터 끊임없이 교정하고 있는 부분이다.<br />
 [2022년 회고록](https://takhyun.dev/post/2022-year-retrospective)에서도 작성했던 것처럼 무언가를 공부할 때 "어떤 문제를 풀고자 하는 것인지" 에 대해<br />
@@ -83,7 +83,7 @@ postingType: "post"
 
 ### 1. 27년 간 고치지 못한 손톱 깨무는 습관 교정
 
-![patience {{ w: 3474, h: 2316, parentW: 50 }}](/images/2023FirstHalf/patience.jpg)
+![patience {{ w: 3474, h: 2316, parentW: 50 }}](/images/2023FirstHalf/patience.webp)
 
 아마 이번 상반기 개선 사항 중에 제일 큰게 아닐까 싶다.<br />
 27년 동안 매일매일 손톱을 꺠물고, 뜯었던 습관을 고치게 되었다.<br />
@@ -99,7 +99,7 @@ postingType: "post"
 
 ### 2. 완벽한 것을 우선으로 하는 마인드 내려놓기
 
-![perfect {{ w: 5184, h: 3888, parentW: 50 }}](/images/2023FirstHalf/perfect.jpg)
+![perfect {{ w: 5184, h: 3888, parentW: 50 }}](/images/2023FirstHalf/perfect.webp)
 
 이 부분도 단점이라면 단점이라고 할 수 있는 부분이다.<br />
 완벽한 것을 목표로 하기에 초기 설계, 기획서 검토 등을 면밀히 할 수는 있으나<br />

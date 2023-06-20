@@ -7,11 +7,7 @@ const Introduce: NextPage = () => {
   return (
     <div className={styles.my_introduce}>
       <div className={styles.intro_profile}>
-        <Image
-          src="/images/intro-profile.jpg"
-          layout="fill"
-          alt="intro profile"
-        />
+        <Image src="/images/intro-profile.jpg" alt="intro profile" fill />
       </div>
       <div>
         <h2 className={styles.title}>김탁현</h2>
