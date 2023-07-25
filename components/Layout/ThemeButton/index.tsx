@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useAudio } from "react-use-audio";
 
 import styles from "./ThemeButton.module.css";
 
