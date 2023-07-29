@@ -2,9 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useAudio } from "react-use-audio";
-import switchOnSound from "./switch-on.wav";
-
 import styles from "./ThemeButton.module.css";
 
 const getTheme = () => {
@@ -21,7 +18,6 @@ const setDocumentTheme = (theme: "dark" | "light") => {
 
 const ThemeButton = () => {
   const [theme, setTheme] = useState<string | null>();
-  const { play } = useAudio(switchOnSound);
 
   const handleChangeTheme = () => {
     if (theme === "dark") {
@@ -33,8 +29,6 @@ const ThemeButton = () => {
       setTheme("dark");
       setDocumentTheme("dark");
     }
-
-    play();
   };
 
   useEffect(() => {
