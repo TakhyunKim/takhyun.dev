@@ -8,12 +8,27 @@ import TableOfContents from "../../../common/components/TableOfContents";
 
 import styles from "./post.module.css";
 
+import type { Metadata } from "next";
 import type { Params } from "../../../common/types/params";
 
 const getPost = async (params: Params) => {
   const postData = await getPostData({ postType: "posts", id: params.id });
 
   return postData;
+};
+
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Params;
+}): Promise<Metadata> => {
+  const { title, description, thumbnailUrl, tagList } = await getPost(params);
+
+  return {
+    title,
+    description,
+    keywords: tagList,
+  };
 };
 
 export const generateStaticParams = async () => {
