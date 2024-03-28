@@ -1,11 +1,9 @@
 import Introduce from "../components/Home/Introduce";
-import RecentPosts from "../components/Home/RecentPosts";
+import PostList from "../common/components/PostList";
 
 import { getSortedPostsAndProjectsData } from "../common/utils/posts";
 
 import type { Metadata } from "next";
-
-const POSTING_VIEW_COUNT = 3;
 
 export const metadata: Metadata = {
   title: "김탁현의 개발 블로그",
@@ -13,15 +11,12 @@ export const metadata: Metadata = {
 };
 
 const Home = () => {
-  const recentPosts = getSortedPostsAndProjectsData().slice(
-    0,
-    POSTING_VIEW_COUNT
-  );
+  const recentPosts = getSortedPostsAndProjectsData();
 
   return (
     <>
       <Introduce />
-      <RecentPosts postList={recentPosts} />
+      <PostList postList={recentPosts} />
     </>
   );
 };
