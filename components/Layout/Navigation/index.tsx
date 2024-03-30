@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import navLinks from "../../../common/routes";
+import ProfileButton from "../ProfileButton";
 
 import styles from "./Navigation.module.css";
 
@@ -12,6 +13,7 @@ const Navigation = () => {
 
   return (
     <nav className={styles.wrapper}>
+      <ProfileButton />
       {navLinks.map((nav) => (
         <Link
           className={
