@@ -5,7 +5,6 @@ import Image from "next/image";
 import Navigation from "../Navigation";
 import Footer from "../Footer";
 import ThemeButton from "../ThemeButton";
-import ProfileButton from "../ProfileButton";
 
 import "../../../styles/globals.css";
 import styles from "./Container.module.css";
@@ -36,7 +35,6 @@ const Container = (props: ContainerProps) => {
               <Image src="/images/github.svg" alt="github" fill />
             </a>
             <ThemeButton />
-            <ProfileButton />
           </div>
         </header>
         <main className={styles.main}>{props.children}</main>
