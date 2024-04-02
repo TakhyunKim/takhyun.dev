@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-import { getSortedPostsAndProjectsData } from "../common/utils/posts";
+import { getSortedPostsAndProjectsData } from "@/common/utils/posts";
 
-import NotFoundHeader from "../components/NotFound/Header";
-import RecentPosts from "../components/Home/RecentPosts";
+import NotFoundHeader from "@/components/NotFound/Header";
+import RecentPosts from "@/components/Home/RecentPosts";
 
-import styles from "../styles/NotFound.module.css";
+import styles from "@/styles/NotFound.module.css";
 
 const POSTING_VIEW_COUNT = 3;
 
