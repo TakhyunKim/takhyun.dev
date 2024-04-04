@@ -6,7 +6,7 @@ import Navigation from "../Navigation";
 import Footer from "../Footer";
 import ThemeButton from "../ThemeButton";
 
-import "../../../styles/globals.css";
+import "@/styles/globals.css";
 import styles from "./Container.module.css";
 
 interface ContainerProps {

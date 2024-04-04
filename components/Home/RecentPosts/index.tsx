@@ -1,9 +1,9 @@
-import PostList from "../../../common/components/PostList";
+import PostList from "@/common/components/PostList";
 
 import styles from "./RecentPost.module.css";
 
 import type { NextPage } from "next";
-import type { PostData } from "../../../common/utils/posts";
+import type { PostData } from "@/common/utils/posts";
 
 interface RecentPostsProps {
   postList: PostData[];
