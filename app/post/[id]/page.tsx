@@ -1,15 +1,15 @@
 import Image from "next/image";
 
-import { getAllPostIds, getPostData } from "../../../common/utils/posts";
+import { getAllPostIds, getPostData } from "@/common/utils/posts";
 
-import MDXRemote from "../../../common/components/MDXRemote";
-import TopScrollButton from "../../../common/components/TopScrollButton";
-import TableOfContents from "../../../common/components/TableOfContents";
+import MDXRemote from "@/common/components/MDXRemote";
+import TopScrollButton from "@/common/components/TopScrollButton";
+import TableOfContents from "@/common/components/TableOfContents";
 
 import styles from "./post.module.css";
 
 import type { Metadata } from "next";
-import type { Params } from "../../../common/types/params";
+import type { Params } from "@/common/types/params";
 
 const getPost = async (params: Params) => {
   const postData = await getPostData({ postType: "posts", id: params.id });
