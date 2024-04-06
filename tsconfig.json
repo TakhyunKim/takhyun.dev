@@ -23,8 +23,6 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/common/*": ["common/*"],
-      "@/posts/*": ["posts/*"],
-      "@/projects/*": ["projects/*"],
       "@/styles/*": ["styles/*"]
     }
   },
