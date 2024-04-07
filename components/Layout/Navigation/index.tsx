@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import navLinks from "../../../common/routes";
+import navLinks from "@/common/routes";
 import ProfileButton from "../ProfileButton";
 
 import styles from "./Navigation.module.css";

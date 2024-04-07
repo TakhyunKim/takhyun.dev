@@ -3,7 +3,7 @@ import PostItem from "./PostItem";
 import styles from "./PostList.module.css";
 
 import type { NextPage } from "next";
-import type { PostData } from "../../utils/posts";
+import type { PostData } from "@/common/utils/posts";
 
 interface PostListProps {
   postList: PostData[];

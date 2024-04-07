@@ -1,7 +1,7 @@
-import Introduce from "../components/Home/Introduce";
-import PostList from "../common/components/PostList";
+import Introduce from "@/components/Home/Introduce";
+import PostList from "@/common/components/PostList";
 
-import { getSortedPostsAndProjectsData } from "../common/utils/posts";
+import { getSortedPostsAndProjectsData } from "@/common/utils/posts";
 
 import type { Metadata } from "next";
 

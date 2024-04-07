@@ -1,8 +1,8 @@
 import Head from "next/head";
 
-import PostList from "../../common/components/PostList";
+import PostList from "@/common/components/PostList";
 
-import { getSortedPostsData } from "../../common/utils/posts";
+import { getSortedPostsData } from "@/common/utils/posts";
 
 import type { Metadata } from "next";
 

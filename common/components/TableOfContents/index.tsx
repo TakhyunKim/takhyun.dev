@@ -8,7 +8,7 @@ import type { MouseEvent, CSSProperties } from "react";
 import type {
   TableOfContent as TableOfContentType,
   TableOfContents as TableOfContentsType,
-} from "../../utils/posts";
+} from "@/common/utils/posts";
 
 import styles from "./TableOfContents.module.css";
 
