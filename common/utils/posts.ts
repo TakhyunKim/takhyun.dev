@@ -8,7 +8,7 @@ import rehypeSlug from "rehype-slug";
 
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
-export type MarkdownPost = "posts" | "projects";
+export type MarkdownPost = "posts" | "projects" | "algorithms";
 
 export interface TableOfContent {
   text: string;
