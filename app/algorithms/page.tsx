@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const Algorithms = () => {
   const allAlgorithmsData = getSortedPostsData({ postType: "algorithms" });
-  console.log(allAlgorithmsData);
+
   return <AlgorithmPostList algorithmPostList={allAlgorithmsData} />;
 };
 
