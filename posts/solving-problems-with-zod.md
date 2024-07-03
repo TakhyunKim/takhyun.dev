@@ -8,6 +8,11 @@ description: "Discover how to solve data validation problems in frontend develop
 postingType: "post"
 ---
 
+> `라이브러리로 어떤 문제를 해결하나요` 는 다음과 같은 주제를 다루고 있어요.
+>
+> 1. 라이브러리에 대한 설명
+> 2. 라이브러리를 사용하면서 해결한 문제
+
 ## 요약
 
 > Zod를 사용하면 데이터 검증 문제를 쉽게 해결할 수 있습니다.<br />
@@ -23,15 +28,6 @@ Zod 홈페이지에서는 **TypeScript-first schema validation with static type 
 데이터 검증은 프론트엔드 개발에서 매우 중요한 과제입니다. <br />
 신뢰할 수 없는 데이터를 처리하거나, 예상치 못한 형식의 데이터가 들어오면 애플리케이션이 오작동할 수 있습니다. <br />
 이런 문제를 해결하기 위해 사용하는 라이브러리 중 하나가 바로 **Zod**입니다.<br />
-
-## TypeScript를 사용하는데 Zod가 필요한가요?
-
-TypeScript는 정적 분석 도구로서, 컴파일 타임에 타입을 검사합니다. <br />
-그러나 서버에서 받아오는 데이터나 사용자 입력 데이터의 유효성 검사는 런타임에 필요합니다. <br />
-
-예를 들어, API로부터 데이터를 받아올 때, 데이터 형식이 예상과 다를 수 있습니다. <br />
-Zod는 이러한 데이터를 런타임에 검사하여 안전성을 높입니다. <br />
-이 둘은 엄연히 다른 것이며 타입 검사가 유효성 검증을 대신할 수 없습니다.
 
 ## 유효성 검증을 직접 구현하면 어떤가요?
 
@@ -63,9 +59,9 @@ function validateUser(user: any) {
 }
 ```
 
-User interface 내에서 몇 안되는 필드를 검증하는데, 다소 많은 코드가 필요합니다.<br />
-그리고 각 필드의 유효 조건을 한 눈에 파악하기 어렵다는 단점도 있습니다.<br />
-단, 4개의 필드만 존재해도 이정도인데, 훨씬 많아진다면 더욱 파악하기 어려울 것 같습니다.
+User interface 몇 개의 필드를 검증하는데도 상당한 코드가 필요합니다. <br />
+또한, 각 필드의 유효 조건을 한눈에 파악하기 어렵다는 단점이 있습니다. <br />
+현재 4개의 필드만 있어도 이런 상황인데, 필드 수가 더 많아진다면 파악이 더욱 어려워질 것입니다.
 
 ## Zod를 사용하면 어떤가요?
 
@@ -88,9 +84,103 @@ const UserSchema = z.object({
 type User = z.infer<typeof UserSchema>;
 ```
 
-Zod를 통해 관리한다면 위와 같이 사용할 수 있습니다.<br />
-유효성 검증을 위한 스키마 작성, 타입 추론, 유효성 검증까지 직관적으로 확인할 수 있습니다.<br />
-직접 작성하는 것에 비해 훨씬 좋은 방법으로 보입니다.
+Zod를 사용하면 위와 같은 문제를 해결할 수 있습니다.<br />
+Zod를 통해 유효성 검증 스키마를 작성하고, 타입을 추론하며, 유효성 검증까지 직관적으로 확인할 수 있습니다. <br />
+직접 코드를 작성하는 것보다 훨씬 효율적인 방법으로 보입니다.
+
+Zod를 사용하면 유효성 검증을 보다 효과적으로 할 수 있다는 것을 알게 되었습니다.<br />
+그렇다면 **이러한 `유효성 검증`은 언제 사용하는 것이 좋을까요?** 🤔
+
+앞서 `신뢰할 수 없는 데이터를 처리하거나 예상치 못한 형식의 데이터가 들어오면 애플리케이션이 오작동할 수 있습니다.` 라고 이야기했습니다.<br />
+그렇다면 **신뢰할 수 없는 데이터를 처리하는 경우와 예상치 못한 형식의 데이터가 들어오는 상황은 언제일까요?**
+
+이 두 상황이 어떤 연관 관계가 있는지 지금부터 살펴보겠습니다.
+
+## 예상치 못한 형식의 데이터가 들어온 경우
+
+### fetch only
+
+화면에서 보여주는 대부분의 요소는 서버로부터 전달 받은 데이터입니다.<br />
+우리는 이러한 데이터를 [fetch](https://developer.mozilla.org/ko/docs/Web/API/Fetch_API) 를 통해 가져옵니다.
+
+이러한 fetch api 를 `typescript` 와 함께 쓰면 다음과 같습니다.
+
+```ts
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+const fetchUsers = async (): Promise<User[]> => {
+  const response = await fetch("https://api.example.com/users");
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+  const data: User[] = await response.json();
+  return data;
+};
+```
+
+특별하게 문제가 있어보이진 않아보입니다.<br />
+하지만 아래 이 코드에서 우리는 예상치 못한 데이터가 들어올 수 있다는 점을 알 수 있습니다.
+
+```ts
+const data: User[] = await response.json();
+```
+
+호출한 데이터가 User[] 형태일 것이라고 예상해서 타입을 적용했습니다.<br />
+하지만 이는 예상에 불과하기 때문에, 실제로는 예상한 타입과 다른 데이터가 들어올 수 있습니다. <br />
+이런 경우, 다른 데이터가 들어왔다는 것을 런타임에서만 알 수 있습니다. <br />
+
+이를 런타임에서만 알 수 있다는 건 개발자가 의도하지 않은 시나리오가 사용자에게 노출된다는 의미입니다.<br />
+이때, 우리는 유효성 검증을 사용하여 문제를 해결할 수 있습니다.
+
+### fetch with zod
+
+먼저, fetch 를 zod 와 함께 사용한 예제를 살펴보겠습니다.
+
+```ts
+import { z } from "zod";
+
+const UserSchema = z.object({
+  id: z.number(),
+  name: z.string(),
+  email: z.string().email(),
+});
+
+// Zod 스키마에서 유추된 타입 정의
+type User = z.infer<typeof UserSchema>;
+
+// Zod 배열 스키마 정의
+const UsersSchema = z.array(UserSchema);
+
+const fetchUsers = async (): Promise<User[]> => {
+  const response = await fetch("https://api.example.com/users");
+  if (!response.ok) {
+    throw new Error(`Network response was not ok: ${response.statusText}`);
+  }
+
+  const data = await response.json();
+
+  // Zod로 데이터 검증
+  const parsedData = UsersSchema.safeParse(data);
+
+  if (!parsedData.success) {
+    throw new Error("Response data is not of type User[]");
+  }
+
+  return parsedData.data;
+};
+```
+
+전달받은 데이터가 `User[]` 인지 확인하기 위해 Zod를 사용하여 유효성 검증을 진행했습니다. <br />
+만약 `User[]` 가 아닌 데이터가 들어온다면, `UsersSchema.safeParse(data)`를 통해 이를 인지할 수 있습니다. <br />
+개발자는 이 상황을 코드에서 제어할 수 있게 됩니다.
+
+이로 인해 런타임에서 예상치 못한 에러가 발생하는 대신, <br />
+잘못된 에러가 발생하더라도 앱이 정상적으로 동작할 수 있도록 기본값 할당과 같이 대응하는 등<br />
+개발자가 직접 대응할 수 있다는 점이 매우 큰 장점이라고 생각합니다.
 
 ## 그래서 Zod 는 어떤 문제를 해결하나요?
 
