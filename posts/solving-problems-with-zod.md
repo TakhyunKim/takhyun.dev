@@ -134,7 +134,7 @@ const data: User[] = await response.json();
 이런 경우, 다른 데이터가 들어왔다는 것을 `런타임`에서만 알 수 있습니다. <br />
 
 이를 런타임에서만 알 수 있다는 건 **개발자가 의도하지 않은 시나리오가 사용자에게 노출**된다는 의미입니다.<br />
-이때, 우리는 유효성 검증을 사용하여 문제를 해결할 수 있습니다.
+이 때, 우리는 유효성 검증을 사용하여 문제를 해결할 수 있습니다.
 
 ### fetch with zod
 
@@ -185,6 +185,154 @@ const fetchUsers = async (): Promise<User[]> => {
 ### 예상치 못한 형식의 데이터가 들어온 경우 zod 가 어떤 도움을 주나요?
 
 > zod 를 `유효성 검증`을 통해 이 상황을 `제어` 할 수 있습니다.<br /> > `기본값 할당`과 같은 대응이 기본적인 예시입니다.
+
+## 신뢰할 수 없는 데이터를 처리하는 경우
+
+그리고 `사용자가 폼에 입력한 데이터`가 예상과 다를 수 있습니다.<br />
+이번에는 `사용자 입력 폼` 을 처리할 때에 zod 가 어떤 도움을 주는지 살펴보겠습니다.
+
+원활한 사용자 폼 처리를 위해 [react-hook-form](https://react-hook-form.com/) 라이브러리를 사용하겠습니다 :D
+
+### react-hook-form only
+
+react-hook-form 을 통해 사용자가 입력하는 데이터를 검증해보겠습니다.
+
+```tsx
+import { useForm } from "react-hook-form";
+
+interface User {
+  name: string;
+  age: number;
+}
+
+const UserForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<User>({
+    defaultValues: {
+      name: "",
+      age: 18,
+    },
+  });
+
+  const onSubmit = (data: User) => {
+    console.log("Valid form data:", data);
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <label>Name</label>
+        <input
+          {...register("name", {
+            required: "Name is required",
+            minLength: {
+              value: 1,
+              message: "Name must be at least 1 character",
+            },
+          })}
+        />
+        {errors.name && <p>{errors.name.message}</p>}
+      </div>
+
+      <div>
+        <label>Age</label>
+        <input
+          type="number"
+          {...register("age", {
+            required: "Age is required",
+            min: { value: 18, message: "Must be at least 18 years old" },
+            max: {
+              value: 100,
+              message: "Age must be less than or equal to 100",
+            },
+          })}
+        />
+        {errors.age && <p>{errors.age.message}</p>}
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default UserForm;
+```
+
+충분히 이해할 수 있는 코드입니다. <br />
+name 필드는 항상 존재해야 하며, 최소 길이는 1입니다. <br />
+age 필드도 항상 존재해야 하며, 최소 나이는 18세, 최대 나이는 100세입니다.
+
+지금은 2개의 필드만을 다루고 있어 문제가 없어 보이지만, <br />
+필드가 5~6개 이상이라면 이 폼에서 다루고 있는 필드의 검증 로직을 파악하기 쉽지 않을 것 같습니다.
+
+이 때, 우리는 zod를 사용하여 더 직관적인 코드를 구성할 수 있습니다.
+
+### react-hook-form with zod
+
+먼저, react-hook-form 을 zod 와 함께 사용한 예제를 살펴보겠습니다.
+
+```tsx
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+
+// User 스키마 정의
+const UserSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  age: z
+    .number()
+    .int()
+    .min(18, "Must be at least 18 years old")
+    .max(100, "Age must be less than or equal to 100"),
+});
+
+type User = z.infer<typeof UserSchema>;
+
+const UserForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<User>({
+    resolver: zodResolver(UserSchema),
+  });
+
+  const onSubmit = (data: User) => {
+    console.log("Valid form data:", data);
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <label>Name</label>
+        <input {...register("name")} />
+        {errors.name && <p>{errors.name.message}</p>}
+      </div>
+
+      <div>
+        <label>Age</label>
+        <input type="number" {...register("age", { valueAsNumber: true })} />
+        {errors.age && <p>{errors.age.message}</p>}
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default UserForm;
+```
+
+Zod 스키마를 정의할 때, 검증 로직과 에러 메시지를 함께 정의합니다.<br />
+이렇게 하면 React Hook Form만 사용할 때보다 더 직관적인 코드를 작성할 수 있습니다.<br />
+필드가 5~6개 혹은 그 이상이더라도 각 필드에 어떤 검증 로직이 있는지 쉽게 이해할 수 있습니다.
+
+많은 양의 폼 데이터를 처리해야 할 때, <br />
+react-hook-form과 zod를 함께 사용하면 시너지 효과가 뛰어납니다. <br />
+**각 필드의 검증 로직과 에러 메시지를 쉽게 파악할 수 있다는 점**이 매우 큰 장점이라고 생각합니다.
 
 ## 그래서 Zod 는 어떤 문제를 해결하나요?
 
