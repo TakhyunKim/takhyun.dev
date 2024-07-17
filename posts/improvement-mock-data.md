@@ -77,6 +77,7 @@ export const userProfileSchema = z.object({
   userName: z.string(),
   age: z.number(),
   role: z.enum(["admin", "user", "guest"]),
+  createAt: z.string().datetime(),
 });
 ```
 
@@ -87,6 +88,7 @@ const profileMockData: z.infer<typeof profileSchema> = {
   userName: "takhyun",
   age: 26,
   role: "user",
+  createdAt: "2024-07-16T16:33:53.114Z",
 };
 ```
 
@@ -125,6 +127,7 @@ export const userProfileSchema = z.object({
   userName: z.string(),
   age: z.number(),
   role: z.enum(["admin", "user", "guest"]),
+  createAt: z.string().datetime(),
 });
 ```
 
@@ -199,3 +202,62 @@ expect(first).toEqual(second);
 ```
 
 ### 실제 적용 방법
+
+실제로 적용하면서 다음과 같은 Factory 함수를 만들게 되었습니다.<br />
+
+```ts
+import { generateMock } from "@anatine/zod-mock";
+
+import type { z } from "zod";
+
+export const dataFactory =
+  <T extends z.ZodTypeAny>(schema: T) =>
+  ({
+    overrides,
+    options,
+  }: {
+    overrides?: DeepPartial<z.infer<T>>;
+    options?: GenerateMockOptions;
+  } = {}): z.TypeOf<T> => ({
+    ...generateMock(schema, options),
+    ...overrides,
+  });
+```
+
+라이브러리에서 제공하는 `generateMock 기능` + `원하는 값을 덮어씌울 수 있는 기능`을 가진 함수입니다.<br />
+위와 같이 구성한 이유는 다음과 같습니다.
+
+> 1. data 타입을 가진 경우, seed 를 설정해도 타임존이 매번 다르게 생성<br />
+> 2. 일부 필드는 우리가 원하는 값으로 설정하고 싶은 니즈 반영
+
+아직 원인 파악은 안되지만, seed 를 설정해도 date 타입의 경우 다른 값을 출력하는 이슈가 있다는 점이 컸습니다.<br />
+더불어 특정 필드의 경우, 랜덤 값이 아닌 개발자가 의도한 값을 보여주는게 필요하여 유틸 함수를 만들었습니다.
+
+위 유틸 함수를 사용한 예제는 다음과 같습니다.
+
+```ts
+const mockDataSeed = 1;
+
+export const userProfileSchema = z.object({
+  userName: z.string(),
+  age: z.number(),
+  role: z.enum(["admin", "user", "guest"]),
+  createAt: z.string().datetime(),
+});
+
+const profileFactory = dataFactory(profileSchema);
+const profileMockData = profileFactory({
+  options: { seed: mockDataSeed },
+  overrides: { createAt: "2023-07-10T10:57:20.12556Z" },
+});
+
+/**
+ * 생성된 값
+ * {userName: 'Billie.Rowe', age: 13, role: 'admin', createAt: '2023-07-10T10:57:20.12556Z'}
+ */
+```
+
+![good {{ w: 700, h: 330, parentW: 50 }}](/images/improvementMockData/good.jpg)
+드디어 zod Schema 에 따라 자동으로 Mock Data 를 생성하게 되었습니다! 🎉 <br />
+이제 API 스펙이 변경 되더라도 `userProfileSchema` 만 수정하면<br />
+Mock Data 도 자동으로 수정되는 방법이 적용되었습니다.
