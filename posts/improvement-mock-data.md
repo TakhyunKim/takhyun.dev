@@ -30,6 +30,9 @@ postingType: "post"
 제가 속한 프론트엔드 팀에서는 [zod](https://zod.dev/) 를 사용하여 API 스키마 및 Form 검증을 하고 있습니다. <br />
 또한, [msw](https://mswjs.io/) 를 통해 API 모킹을 함께 사용하여 개발을 진행하고 있습니다.
 
+![zod {{ w: 300, h: 300, parentW: 5 }}](/images/improvementMockData/zod.png)
+![msw {{ w: 300, h: 300, parentW: 5 }}](/images/improvementMockData/msw.png)
+
 msw 를 통한 API 모킹은 개발 과정에서 유용했지만, <br />
 API 모킹을 위해 필요한 Mock Data 의 관리 비용이 꽤 크다는 생각이 들었습니다.<br />
 
