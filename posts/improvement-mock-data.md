@@ -1,7 +1,7 @@
 ---
 title: "개선 일기 - Mock Data 편"
 subtitle: "Mock Data 자동 생성으로 관리하기"
-date: "2024-07-14"
+date: "2024-07-18"
 thumbnailUrl: "/images/improvementMockData/thumbnail.png"
 tag: "mock-data,zod,자동화"
 description: "Generating mock data automatically"
