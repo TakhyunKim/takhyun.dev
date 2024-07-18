@@ -18,7 +18,10 @@ postingType: "post"
 
 > zod 와 zod-mock 라이브러리를 사용하면, Schema Mock Data 를 자동으로 생성할 수 있습니다.<br />
 > 이러한 자동화를 통해 `Schema 변경`과 `Mock Data 생성`을 한 번에 처리할 수 있습니다.<br />
-> 위 과정을 통해 Mock Data 유지보수 비용을 크게 낮추는 경험을 했습니다.
+> 위 과정을 통해 700줄 가량의 코드를 줄이고, Mock Data 유지보수 비용을 크게 낮추는 경험을 했습니다.<br />
+> 당연하다고 생각했던 비효율을 개선하는 과정이였습니다.
+
+> [zod-mock 라이브러리 GitHub](https://github.com/anatine/zod-plugins/tree/main/packages/zod-mock)
 
 ## 라이브러리 버전
 
@@ -261,3 +264,17 @@ const profileMockData = profileFactory({
 드디어 zod Schema 에 따라 자동으로 Mock Data 를 생성하게 되었습니다! 🎉 <br />
 이제 API 스펙이 변경 되더라도 `userProfileSchema` 만 수정하면<br />
 Mock Data 도 자동으로 수정되는 방법이 적용되었습니다.
+
+## 개선 후기
+
+수많은 API End Point 에 대응하는 API Schema 그리고 Mock Data<br />
+수정하는 하는 일은 단순했지만, 비용이 많이 들어갔습니다.
+
+이번 Mock Data 자동생성 작업을 통해 개발자는 API Schema 스펙 업데이트만 집중하고<br />
+Mock Data 는 변경된 API Schema 스펙에 맞춰 알아서 업데이트하는 워크 플로우를 만들었습니다.
+
+이번 작업 덕분에 약 `700줄` 가량의 Mock Data 코드를 개선할 수 있었습니다.
+
+단순하고, 익숙해서 어쩌면 `당연하다고 생각했던 비효율을 개선하는 과정`이였습니다.<br />
+큰 작업은 아니지만, 개발 업무 프로세스를 개선한 경험은 분명 큰 도움이 되었던 것 같습니다.<br />
+앞으로도 당연하다고 생각했던 부분들을 한 번 되짚어보는 시간을 가져보는게 좋을 것 같단 생각이 들었습니다.
