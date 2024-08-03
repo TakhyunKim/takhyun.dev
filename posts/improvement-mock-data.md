@@ -1,6 +1,6 @@
 ---
-title: "개선 일기 - Mock Data 편"
-subtitle: "Mock Data 자동 생성으로 관리하기"
+title: "개선 일기 - Mock Data 코드 700줄 줄이기"
+subtitle: "Mock Data 자동 생성으로 코드 700줄을 줄이며"
 date: "2024-07-18"
 thumbnailUrl: "/images/improvementMockData/thumbnail.png"
 tag: "mock-data,zod,자동화"
