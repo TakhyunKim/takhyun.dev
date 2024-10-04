@@ -50,3 +50,33 @@ Storybook 으로 Page 단위 Story 를 관리할 때 이런 느낌을 받았습�
 생각보다 쉽지 않다는 것이 문제로 느껴졌습니다.
 
 결국 `과도한 관리 비용의 문제`라고 정리할 수 있을 것 같습니다.
+
+### 기존 코드는 어떤 형태인가요?
+
+앞서 `각 Page 에서 사용하는 데이터를 Mock Data 로 관리하고 이를 할당하여 구성했습니다` 라고 이야기했습니다.<br />
+현재 유저 정보를 표현하는 페이지를 예시로 코드 형태를 보여드리겠습니다.<br />
+page 코드부터 작성하겠습니다.
+
+```tsx
+import { useUser } from './hooks';
+
+function UserPageContainer() {
+  // user 정보를 가져오는 fetch custom hook
+  const { user } = useUser();
+
+  return <User user={user} />;
+}
+
+// View 정보를 가진 Component
+function MyPage({ user }) {
+  return (
+    // ... jsx 로직
+  );
+}
+```
+
+위 코드는 다음과 같은 구조를 가지고 있습니다.
+
+> 1. 페이지 UI 만을 다루는 `MyPage Component`
+> 2. user 정보를 fetch 하는 `useUser custom hook`
+> 3. 위 두 가지 요소를 포함하는 `UserPageContainer Component`
