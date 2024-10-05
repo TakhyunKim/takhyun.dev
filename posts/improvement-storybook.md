@@ -1,7 +1,7 @@
 ---
 title: "개선 일기 - storybook 을 더 쉽게"
 subtitle: "Storybook with MSW"
-date: "2024-09-29"
+date: "2024-10-07"
 thumbnailUrl: "/images/improvementStorybook/thumbnail.png"
 tag: "storybook,msw"
 description: "storybook, msw, easy"
