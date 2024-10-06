@@ -67,7 +67,7 @@ function UserPageContainer() {
   return <User user={user} />;
 }
 
-// View 정보를 가진 Component
+// 페이지 UI 만을 다루는 Component
 function MyPage({ user }) {
   return (
     // ... jsx 로직
@@ -80,3 +80,5 @@ function MyPage({ user }) {
 > 1. 페이지 UI 만을 다루는 `MyPage Component`
 > 2. user 정보를 fetch 하는 `useUser custom hook`
 > 3. 위 두 가지 요소를 포함하는 `UserPageContainer Component`
+
+기존 코드에서 스토리북은 페이지 UI 만을 다루는 `MyPage` 를 가져와서 Story 를 구성했습니다.
