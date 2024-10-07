@@ -55,7 +55,7 @@ Storybook 으로 Page 단위 Story 를 관리할 때 이런 느낌을 받았습�
 
 앞서 `각 Page 에서 사용하는 데이터를 Mock Data 로 관리하고 이를 할당하여 구성했습니다` 라고 이야기했습니다.<br />
 현재 유저 정보를 표현하는 페이지를 예시로 코드 형태를 보여드리겠습니다.<br />
-page 코드부터 작성하겠습니다.
+page 코드부터 보겠습니다.
 
 ```tsx
 import { useUser } from './hooks';
