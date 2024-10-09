@@ -60,6 +60,12 @@ page 코드부터 보겠습니다.
 ```tsx
 import { useUser } from './hooks';
 
+interface User {
+  id: string;
+  name: string;
+  age: number;
+}
+
 function UserPageContainer() {
   // user 정보를 가져오는 fetch custom hook
   const { user } = useUser();
@@ -68,7 +74,7 @@ function UserPageContainer() {
 }
 
 // 페이지 UI 만을 다루는 Component
-function MyPage({ user }) {
+function MyPage({ user }: { user: User }) {
   return (
     // ... jsx 로직
   );
@@ -82,7 +88,26 @@ function MyPage({ user }) {
 > 3. 위 두 가지 요소를 포함하는 `UserPageContainer Component`
 
 기존 코드에서 스토리북은 페이지 UI 만을 다루는 `MyPage` 를 가져와서 Story 를 구성했습니다.
+그리고 필요한 데이터는 Mock Data 로 관리하여 사용합니다.
 
 ```tsx
+import { MyPage } from "./page";
 
+import type { Meta } from "@storybook/react";
+import type { User } from "./page";
+
+const MOCK_USER: User = {
+  id: "test_id",
+  name: "tak_hyun",
+  age: 28,
+};
+
+function PageRenderer() {
+  return <MyPage user={MOCK_USER} />;
+}
+
+const meta: Meta<typeof PageRenderer> = {
+  title: "My Page",
+  component: PageRenderer,
+};
 ```
