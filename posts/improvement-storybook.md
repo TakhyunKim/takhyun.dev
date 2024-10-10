@@ -98,7 +98,7 @@ import type { User } from "./page";
 
 const MOCK_USER: User = {
   id: "test_id",
-  name: "tak_hyun",
+  name: "Tak",
   age: 28,
 };
 
@@ -111,3 +111,16 @@ const meta: Meta<typeof PageRenderer> = {
   component: PageRenderer,
 };
 ```
+
+지금은 `MOCK_USER` 라는 간단한 mock data 를 생성해서 할당하는 방식입니다.<br />
+하지만 모든 페이지의 Story 에서 mock data 를 관리하고, 더 복잡한 Mock data 를 생성하게 된다면<br />
+Story 를 관리하는 비용은 점진적으로 늘어날 것입니다.<br />
+그럼 이 비용을 어떻게 줄일 수 있을까요?
+
+## 개선을 위해 찾아낸 방법
+
+일단 가장 좋은 방향은 Mock Data 생성 없이 user 정보를 가져오는 fetch hook 을 포함한<br />
+Container Component 자체를 Story 로 구성하는 것이라고 생각합니다.
+
+그렇다고 실환경 API 를 호출하는 것은 불필요하니 이미 개발 환경에서 사용하고, 구축한<br />
+MSW 를 Storybook 에서 사용하는 방향을 생각하게 되었습니다.
