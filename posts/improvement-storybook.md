@@ -114,7 +114,13 @@ const meta: Meta<typeof PageRenderer> = {
 
 지금은 `MOCK_USER` 라는 간단한 mock data 를 생성해서 할당하는 방식입니다.<br />
 하지만 모든 페이지의 Story 에서 mock data 를 관리하고, 더 복잡한 Mock data 를 생성하게 된다면<br />
-Story 를 관리하는 비용은 점진적으로 늘어날 것입니다.<br />
+Story 를 관리하는 비용은 점진적으로 늘어날 것입니다.
+
+그리고 앞서 불편함에 대한 이야기를 한 것처럼<br />
+API 스펙이 변경되어 User 타입도 변경되었다면?<br />
+페이지 기획이 변경되어 props 도 변경되었다면?<br />
+Page 수정과 더불어 Story 를 함께 수정한다면 비용은 계속 늘게 됩니다.
+
 그럼 이 비용을 어떻게 줄일 수 있을까요?
 
 ## 개선을 위해 찾아낸 방법
@@ -122,5 +128,12 @@ Story 를 관리하는 비용은 점진적으로 늘어날 것입니다.<br />
 일단 가장 좋은 방향은 Mock Data 생성 없이 user 정보를 가져오는 fetch hook 을 포함한<br />
 Container Component 자체를 Story 로 구성하는 것이라고 생각합니다.
 
+이 경우, fetch hook 도 실행이 필요합니다.<br />
 그렇다고 실환경 API 를 호출하는 것은 불필요하니 이미 개발 환경에서 사용하고, 구축한<br />
 MSW 를 Storybook 에서 사용하는 방향을 생각하게 되었습니다.
+
+그리고 찾아보니 Storybook 에서 msw addon 을 지원하고 있는 것을 볼 수 있었습니다.
+
+- [Storybook MSW Addon](https://storybook.js.org/addons/msw-storybook-addon)
+
+### Storybook with MSW(Mock Service Worker)
