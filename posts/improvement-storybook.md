@@ -13,6 +13,9 @@ postingType: "post"
 > 1. 개선 전 불편한 점
 > 2. 개선을 위해 찾아낸 방법
 > 3. 개선 후기
+>
+> 이번 포스팅에서는 각 기술에 대한 자세한 방법을 다루지 않습니다.<br />
+> 문제 해결을 위한 접근 방식에 대한 내용만 다루니 참고 부탁드립니다.
 
 ## 요약
 
@@ -137,3 +140,8 @@ MSW 를 Storybook 에서 사용하는 방향을 생각하게 되었습니다.
 - [Storybook MSW Addon](https://storybook.js.org/addons/msw-storybook-addon)
 
 ### Storybook with MSW(Mock Service Worker)
+
+> Storybook MSW Addon 설정은 위에 링크 참고 부탁드립니다.<br />
+
+Storybook MSW Addon 을 활용하면 MSW 를 Storybook 에서도 활용할 수 있습니다.<br />
+이를 통해 fetch hook 을 포함한 Container Component 를 Story 로 구성할 수 있습니다.
