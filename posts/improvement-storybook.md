@@ -1,7 +1,7 @@
 ---
 title: "개선 일기 - storybook 을 더 쉽게"
 subtitle: "Storybook with MSW"
-date: "2024-10-12"
+date: "2024-10-14"
 thumbnailUrl: "/images/improvementStorybook/thumbnail.png"
 tag: "storybook,msw"
 description: "storybook, msw, easy"
@@ -22,7 +22,14 @@ postingType: "post"
 > Storybook 을 Page 단위 Story 관리 방식을 개선했습니다.<br />
 > 각 Story 의 관리 비용을 줄이고자 msw 를 활용했고,<br />
 > 꽤 유의미한 비용 절감을 볼 수 있었습니다.<br />
-> 이번 글에선 msw 를 적용하기까지의 과정을 작성했습니다.
+>
+> 코드는 `1330줄`을 줄였고, `Story 관리 비용은 0` 에 가깝게 줄이게 되었습니다.<br />
+> 이번 글에선 Storybook 에 msw 를 적용하기까지의 과정을 작성했습니다.
+
+## 라이브러리 버전
+
+- storybook: v8.2.9
+- msw: v1.3.3
 
 ## 개선하기 전에 어떤게 불편했나요?
 
@@ -32,7 +39,8 @@ Storybook 으로 Page 단위 Story 를 관리할 때 이런 느낌을 받았습�
 각 페이지에서 사용하는 데이터를 모킹해서 적용한 Story 는 시간이 지날수록 거대한 배꼽이 되고 있었습니다.<br />
 페이지 요구사항이 변경되어 수정하면 Story 도 함께 수정해야하는데 이게 보통 비용이 아니였습니다.
 
-비주얼 사이드 이펙트를 `쉽게` 확인하기 위해 적용한 기술이 어느덧 저를 지치게 하는 기술로 느껴지는 순간이였습니다.<br />
+[Chromatic](https://www.chromatic.com/) 과 함께 사용해서 비주얼 사이드 이펙트를 `쉽게` 확인하기 위해<br />
+적용한 기술이 어느덧 저를 지치게 하는 기술로 느껴지는 순간이였습니다.<br />
 지친 순간부터 관리가 어려워지며, 아름다웠던 Page Story 는 더이상 원래 기능을 할 수 없게 됩니다.
 
 이게 제가 불편하다고 느낀 부분입니다.<br />
@@ -154,3 +162,86 @@ Storybook MSW Addon 을 활용하면 MSW 를 Storybook 에서도 활용할 수 �
 
 > 아래 글은 이미 msw 를 사용하고 있단 가정 하에 작성했습니다.<br />
 > 자세한 msw 사용법은 [문서](https://mswjs.io/)에서 보시는 걸 추천드립니다.
+
+먼저 msw-storybook-addon 을 설치합니다.
+
+```shell
+npm i msw msw-storybook-addon -D
+```
+
+그리고 `.storybook/preview.js` 파일에 다음과 같이 적용합니다.<br />
+이렇게 되면 storybook 에서도 msw 를 활용할 수 있습니다.
+
+```js
+// .storybook/preview.js
+import { initialize, mswLoader } from "msw-storybook-addon";
+// auth msw handler 를 가져옵니다.
+import { authHandler } from "@/mocks";
+
+// msw 초기 세팅
+initialize();
+
+const preview = {
+  parameters: {
+    // 다음과 같이 적용합니다.
+    msw: {
+      handlers: [...authHandler],
+    },
+  },
+  // Provide the MSW addon loader globally
+  loaders: [mswLoader],
+};
+
+export default preview;
+```
+
+그럼 fetch hook 을 포함한 Container Component 를 바로 Story 로 만들어보겠습니다.<br />
+
+```tsx
+import { UserPageContainer } from "./page";
+
+import type { Meta } from "@storybook/react";
+
+function PageRenderer() {
+  return <UserPageContainer />;
+}
+
+const meta: Meta<typeof PageRenderer> = {
+  title: "My Page",
+  component: PageRenderer,
+};
+```
+
+Story 코드는 굉장히 간단합니다.<br />
+기존에 있었던 Mock Data 선언 부분과 Page 에 할당하는 로직이 사라지고<br />
+fetch 를 포함한 Container Component 를 import 해서 구성했습니다.
+
+이렇게 되면 UserPageContainer 내의 api 스펙이 변경되어도,<br />
+내부 페이지 props 가 변경되어도 Story 수정은 없어도 됩니다.
+
+## 개선 후기
+
+기술은 우리 주변의 많은 문제를 해결해줍니다.<br />
+제가 풀지 못하는 문제를 대신 해결해주거나<br />
+약간은 답답했던 부분을 해소해주거나 많은 이로움을 가져다줍니다.
+
+하지만 가끔 이를 잘 활용하지 못해 `이거 생각보다 별로인 것 같아` 하고 다시 사용하기 전으로 돌아가곤 합니다.<br />
+저는 이런 생각이 들면, 다시 생각해봅니다.<br />
+
+> `이거 내가 잘못 활용하고 있는게 아닐까?`
+
+이러한 사고 흐름 덕분에 지금과 같은 개선의 기회를 얻고 있다고 생각합니다.<br />
+현재 작성하고 있는 이 글은 이러한 리팩토링 과정을 직접 실무에 적용하면서 쓰고 있습니다.<br />
+그리고 10월 14일 오늘, 이러한 리팩토링 작업이 완료된 후, 테스트를 해보았습니다.<br />
+처음에 목표로 했던 것과 같이 `쉽게` 비주얼 사이드 이펙트를 확인할 수 있을지를 봤습니다.
+
+결과는?<br />
+`성공입니다.`<br />
+스토리 수정 없이 Page 변경만으로 비주얼 변경 사항을 트래킹 할 수 있었고<br />
+앞으로도 Story 를 따로 관리할 필요 없이 `쉽게` 비주얼 사이드 이펙트를 확인할 수 있게 되었습니다.
+
+아직 보강해야할 부분은 많습니다.<br />
+해당 페이지의 다양한 케이스의 스토리를 msw 와 함께 어떻게 풀어나갈 수 있을지와 같은 숙제가 남아있습니다.
+
+이번 개선을 경험 삼아 더욱 가성비 있는 리팩토링을 해보려 합니다.<br />
+긴 글 읽어 주셔서 정말 감사합니다.
